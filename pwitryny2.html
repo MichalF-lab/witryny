@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<style>
+			a{
+                text-decoration: none;
+                color: white;
+            }
+            li{
+                list-style-type: none;
+                width: 80px;
+                height: auto;
+                background-color: gray;
+                text-align: center;
+                margin: 3px;
+            }
+
+            #druga {
+                position: absolute;
+                top: 40px;
+                left: 92px;
+            }
+            #trzecia {
+                position: absolute;
+                top: 22px;
+                left: 82px;
+            }
+            #czwarta {
+                position: absolute;
+                top: 22px;
+                left: 84px;
+            }
+            #druga, #trzecia{
+                display: none;
+            }
+            #pierwsza >li:hover >#druga{
+                display: block;
+            }
+            #druga li:hover #trzecia{
+                display: block;
+            }
+            #trzecia >li:hover >#czwarta{
+                display: block;
+            }
+		</style>
+    </head>
+    <body>
+        <ul id="pierwsza">
+           <li><a href="">A</a>
+                <ul id="druga">
+                    <li><a href="">aa</a></li>
+                    <li><a href="">ab</a>
+                        <ul id="trzecia">
+                            <li>
+                                <a href="">abb</a>
+                                <ul id="czwarta">
+                                    <li>abba</li>
+                                    <li>abbb</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="">ac</a></li>
+               </ul>
+            </li>
+            <li><a href="">b</a></li>
+            <li><a href="#">C</a></li>
+        </ul> 
+    </body>
+</html>
