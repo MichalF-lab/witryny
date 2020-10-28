@@ -43,6 +43,7 @@
             #trzecia >li:hover >#czwarta{
                 display: block;
             }
+            table, tr, th, td {border: 2px solid gray;}
 		</style>
     </head>
     <body>
@@ -55,8 +56,8 @@
                             <li>
                                 <a href="">abb</a>
                                 <ul id="czwarta">
-                                    <li>abba</li>
-                                    <li>abbb</li>
+                                    <li><a href=""">abba</a></li>
+                                    <li><a href=""">abbb</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -64,8 +65,27 @@
                     <li><a href="">ac</a></li>
                </ul>
             </li>
-            <li><a href="">b</a></li>
+            <li><a href="">B</a></li>
             <li><a href="#">C</a></li>
+            <table>
+                <tr>
+                    <th>poniedziałek</th>
+                    <th>wtorek</th>
+                    <th colspan="3">środa</th>
+                </tr>
+                <tr>
+                    <th rowspan="2">basen</th>
+                    <th>biegi</th>
+                    <th>karate</th>
+                    <th rowspan="2">tenis</th>
+                    <th>piłka nożna</th>
+                </tr>
+                <tr>
+                    <th>nauka</th>
+                    <th>balet</th>
+                    <th>książka</th>
+                </tr>
+            </table>
         </ul> 
     </body>
 </html>
