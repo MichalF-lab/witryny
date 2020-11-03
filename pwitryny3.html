@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<style>
+           li {
+               list-style-type: none;
+               width: 80px;
+               background-color: darkgrey;
+               margin: 3px;
+               padding: 5px;
+           }
+           a{
+               text-decoration: none;
+               color: indigo;
+           }
+           #two{
+               display: none;
+           }
+           #one >li {
+               display: inline;
+           }
+           #one >li:hover #two{
+               display: inline-block;
+               position: absolute;
+               top: 67px;
+               left: 76px;
+           }
+		</style>
+    </head>
+    <body>
+        <ul id="one">
+            <li><a href="#">O NAS</a></li>
+            <li><a href="#">GALERIA</a>
+                <ul id="two">
+                    <li><a href="#">GRECJA</a></l>
+                    <li><a href="#">HISZPANIA</a></li>
+                </ul>
+            </li>
+            <li><a href="#">KURSY</a></li>
+            <li><a href="#">POMOC</a></li>
+        </ul>
+        <br>
+        <form name="zamówienie" action="mailto:xyz@wp.pl">
+            <table>
+                <tr>
+                    <td>Imie Nazwisko</td>
+                    <td><input type="text" name="in" size="30" maxlength="15"></td>
+                </tr>
+                <tr>
+                    <td>Ulica</td>
+                    <td><input type="text" name="ul" size="30"></td>
+                </tr>
+                <tr>
+                    <td>Kod, Miejscowość</td>
+                    <td><input type="text" name="Kod" size="30"></td>
+                </tr>
+                <tr>
+                    <td>Adres e-mail</td>
+                    <td><input type="email" name="e-mail" size="30"></td>
+                </tr>
+            </table>
+            <br>
+            <label>
+                Co zamawiasz?
+                <br>
+                <input type="checkbox" name="produkt" value="turbo"> Turbo Pascal
+                <input type="checkbox" name="produkt" value="c++"> C++
+                <input type="checkbox" name="produkt" value="Java"> Java
+            </label>
+            <br><br>
+            <label>
+                Sposób płatności:
+                <br>
+                <input type="radio" name="pay" value="EC"> EuroCard
+                <input type="radio" name="pay" value="Blik"> Blik
+                <input type="radio" name="pay" value="Visa"> Visa
+            </label>
+            <br>
+            <br>
+            <input type="submit" name="wyślij" value="Wyślij zamówienie">
+            <input type="reset" name="anuluj" value="Anuluj zamówienie">
+        </form>
+        </br>
+        <br>
+        </br>
+    </body>
+</html>
