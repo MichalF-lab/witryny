@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(209,166,94);
+}
+#pojemnik{
+    width: 70%;
+    margin: 0 auto;
+}
+#naglowek{
+    width: 100%;
+    height: 530px;
+    background-image: linear-gradient(to right,rgb(215,210,180), rgb(163,152,90));
+    text-align: center;
+}
+
+#naglowek h1, h2{
+    font-family: Edwardian script ITC;
+    font-size: 4em;
+    color: rgb(118,82,22);
+}
+
+#tresc{
+    height: 350px;
+    width: 100%;
+    background-color: white;
+}
+
+#menuglowne li{
+    display: inline;
+    list-style-type: none;
+    margin: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+img{
+    width: 95%;
+}
