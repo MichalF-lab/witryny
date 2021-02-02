@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8"/>
         <title>układ strony powtórka</title>
         <style>
             *{
-                color: white;
+                color: black;
                 font-family: Arial, Helvetica, sans-serif;
             }
             main{
@@ -53,6 +54,7 @@
                 padding-right: 15px;
                 margin: 7px;
             }
+            
         </style>
         <link rel="stylesheet" href=""/>
     </head>
@@ -67,11 +69,11 @@
              <article>
                 <h4>Proste działania</h4>
                 <label>
-                    liczba A: <input type="number" name="" id="liczbaA" /> <br>
-                    liczba <B></B>: <input type="number" name="" id="liczbaB" /> <br>
+                    liczba A: <input type="number" name="" id="a" /> <br>
+                    liczba B: <input type="number" name="" id="b" /> <br>
                 </label>
-                <button>+</button>
-                <button>-</button>
+                <button onclick="dodawanie()">+</button>
+                <button id = "btn">-</button>
                 <button>*</button>
                 <button>/</button>
                 <button>A^B</button>
@@ -90,5 +92,35 @@
                 Autor: 0000000000000
              </footer>
          </main>
+         <script>
+             function dodawanie(){
+                 let liczbaA = Number(document.getElementById("a").value);
+                 let liczbaB = Number(document.getElementById("b").value);
+
+                 if(liczbaA < 0 || liczbaB < 0){
+                     alert("błedne dane");
+                 }
+                 
+                 else{
+                     document.getElementById("Wynik: ").innerHTML = "wynik" + (liczbaA + liczbaB);
+                 }
+
+
+                
+             }
+             document.getElementById("btn").onclick = function(){
+                let liczbaA = Number(document.getElementById("a").value);
+                let liczbaB = Number(document.getElementById("b").value);
+
+                if(liczbaA < liczbaB){
+                    alert("A jest mniejsze od B");
+                    document.getElementById("a").style.borderColor = "red";
+                }
+
+                else{
+                    document.getElementById("Wynik: ").innerHTML = "wynik" + (liczbaA - liczbaB);
+                }
+             }
+         </script>
     </body>
 </html>
