@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+        </style>
+    </head>
+    <body>
+         <main>
+             
+         </main>
+         <script>
+             function dodawanie(){
+                 let liczbaA = Number(document.getElementById("a").value);
+                 let liczbaB = Number(document.getElementById("b").value);
+
+                 if(liczbaA < 0 || liczbaB < 0){
+                     alert("błedne dane");
+                 }
+                 
+                 else{
+                     document.getElementById("Wynik: ").innerHTML = "wynik" + (liczbaA + liczbaB);
+                 }
+
+
+                
+             }
+             document.getElementById("btn").onclick = function(){
+                let liczbaA = Number(document.getElementById("a").value);
+                let liczbaB = Number(document.getElementById("b").value);
+
+                if(liczbaA < liczbaB){
+                    alert("A jest mniejsze od B");
+                    document.getElementById("a").style.borderColor = "red";
+                }
+
+                else{
+                    document.getElementById("Wynik: ").innerHTML = "wynik" + (liczbaA - liczbaB);
+                }
+             }
+         </script>
+    </body>
+</html>

@@ -74,9 +74,9 @@
                 </label>
                 <button onclick="dodawanie()">+</button>
                 <button id = "btn">-</button>
-                <button>*</button>
-                <button>/</button>
-                <button>A^B</button>
+                <button onclick="mnożenie()">*</button>
+                <button onclick="dzielenie()">/</button>
+                <button onclick="potęgowanie()" >A^B</button>
                 <p id="wynik">Wynik: </p>
              </article>
              <article>
@@ -102,11 +102,8 @@
                  }
                  
                  else{
-                     document.getElementById("Wynik: ").innerHTML = "wynik" + (liczbaA + liczbaB);
+                     document.getElementById("wynik").innerHTML = "wynik " + (liczbaA + liczbaB);
                  }
-
-
-                
              }
              document.getElementById("btn").onclick = function(){
                 let liczbaA = Number(document.getElementById("a").value);
@@ -118,8 +115,44 @@
                 }
 
                 else{
-                    document.getElementById("Wynik: ").innerHTML = "wynik" + (liczbaA - liczbaB);
+                    document.getElementById("wynik").innerHTML = "wynik " + (liczbaA - liczbaB);
                 }
+             }
+             function mnożenie(){
+                 let liczbaA = Number(document.getElementById("a").value);
+                 let liczbaB = Number(document.getElementById("b").value);
+
+                 if(liczbaA < 0 || liczbaB < 0){
+                     alert("błedne dane");
+                 }
+                 
+                 else{
+                     document.getElementById("wynik").innerHTML = "wynik " + (liczbaA * liczbaB);
+                 }
+             }
+             function dzielenie(){
+                 let liczbaA = Number(document.getElementById("a").value);
+                 let liczbaB = Number(document.getElementById("b").value);
+
+                 if( liczbaB = 0){
+                     alert("błedne dane");
+                 }
+                 
+                 else{
+                     document.getElementById("wynik").innerHTML = "wynik " + (liczbaA / liczbaB);
+                 }
+             }
+             function potęgowanie(){
+                 let liczbaA = Number(document.getElementById("a").value);
+                 let liczbaB = Number(document.getElementById("b").value);
+
+                 if(liczbaA < 0 || liczbaB < 0){
+                     alert("błedne dane");
+                 }
+                 
+                 else{
+                     document.getElementById("wynik").innerHTML = "wynik " + (liczbaA ^ liczbaB);
+                 }
              }
          </script>
     </body>
