@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<title>DOM, dynamiczna zmiana html</title>
+	<style>
+        ul {display: flex;
+            flex-direction: column;
+            }
+        
+        ul li { list-style-type: none;
+                width:100px;
+                padding: 3px;
+                background-color: tomato;
+                color: white;
+                margin: 5px;
+                display: flex;
+                justify-content: center;}
+        .zmiana {flex-direction: row;}
+        
+        .czcionka {font-family: fantasy;}
+	</style>
+</head>	
+<body>
+    <ul>
+        <li>menu_1</li>
+        <li>menu_2</li>
+        <li>menu_3</li>
+        <li>menu_4</li>
+        <li>menu_5</li>
+    </ul>
+    <br>
+    <button>poziome / pionowe menu</button>
+    <button>zmiana tła 2 i 5 elementu</button>
+    <button>zmiana czcionki wszystkich elementów</button>
+    
+	<script src="skrypt_15_03.js"></script>
+</body>
+</html>
+
