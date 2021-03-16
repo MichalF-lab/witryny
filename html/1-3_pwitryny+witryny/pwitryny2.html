@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<style>
+			a{
+                text-decoration: none;
+                color: white;
+            }
+            li{
+                list-style-type: none;
+                width: 80px;
+                height: auto;
+                background-color: gray;
+                text-align: center;
+                margin: 3px;
+            }
+
+            #druga {
+                position: absolute;
+                top: 40px;
+                left: 92px;
+            }
+            #trzecia {
+                position: absolute;
+                top: 22px;
+                left: 82px;
+            }
+            #czwarta {
+                position: absolute;
+                top: 0px;
+                left: 84px;
+            }
+            #druga, #trzecia{
+                display: none;
+            }
+            #pierwsza >li:hover >#druga{
+                display: block;
+            }
+            #druga li:hover #trzecia{
+                display: block;
+            }
+            #trzecia >li:hover >#czwarta{
+                display: block;
+            }
+            table, tr, th, td {border: 2px solid gray;}
+		</style>
+    </head>
+    <body>
+        <ul id="pierwsza">
+           <li><a href="">A</a>
+                <ul id="druga">
+                    <li><a href="">aa</a></li>
+                    <li><a href="">ab</a>
+                        <ul id="trzecia">
+                            <li>
+                                <a href="">abb</a>
+                                <ul id="czwarta">
+                                    <li><a href=""">abba</a></li>
+                                    <li><a href=""">abbb</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="">ac</a></li>
+               </ul>
+            </li>
+            <li><a href="">B</a></li>
+            <li><a href="#">C</a></li>
+            <br><br>
+            <table>
+                <tr>
+                    <th>poniedziałek</th>
+                    <th>wtorek</th>
+                    <th colspan="3">środa</th>
+                </tr>
+                <tr>
+                    <th rowspan="2">basen</th>
+                    <th>biegi</th>
+                    <th>karate</th>
+                    <th rowspan="3">tenis</th>
+                    <th>piłka nożna</th>
+                </tr>
+                <tr>
+                    <th>nauka</th>
+                    <th>balet</th>
+                    <th>książka</th>
+                </tr>
+            </table>
+        </ul> 
+    </body>
+</html>

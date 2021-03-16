@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<title>DOM, dynamiczna zmiana html</title>
+	<style>
+	body
+        {
+	       font-size: 18px;
+        }
+    .aka-color
+        {
+            color: red;
+        }
+    .lis-border
+        {
+            border: 5px solid blue;
+        }
+    .lis-txt
+        {
+            text-decoration: underline;
+        }
+    .bdef
+        {
+            font-weight: 900;
+        }
+	</style>
+	<script src="skryptzad2.js"></script>
+</head>
+<body>
+	<h2 class="abc">Nagłówek z klasą ="abc".</h2>
+	<h3 class="abc">Nagłówek z klasą ="abc".</h3> 
+	<p class="def">Akapit z klasą ="def".</p>
+	<p class="abc">Drugi akapit z klasą ="abc".</p>
+	<p id="id1">Akapit bez klasy z identyfikatorem</p> 
+	<ul>
+	<li>punkt pierwszy</li>
+	<li>punkt drugi</li>
+	<li class="def">punkt trzeci</li>
+	<li class="abc">punkt czwarty</li>
+	</ul>
+	<ol>
+	<li>punkt pierwszy</li>
+	<li>punkt drugi</li>
+	<li class="def">punkt trzeci</li>
+	<li class="def">punkt czwarty</li>
+	</ol>
+	<button>Zmień kolor czcionki pierwszego akapitu  z klasą="abc"</button><br><br>
+	<button>Zmień kolor tła i tekst akapitu z identyfikatorem</button><br><br>
+	<button>Zmień formatowanie pierwszego punktu listy wypunktowanej / dodaj border</button><br><br> 
+	<button>Zmień formatowanie  punktów listy numerowanej w klasie def / text-decoration</button><br><br>
+	<button >Zmień formatowanie  punktów  w klasie def / pogrubienie</button>
+    <script>
+        let guziki = document.querySelectorAll("button");
+        guziki[0].onclick =()=>
+        {
+            let aka = document.querySelectorAll("p.abc");
+            aka[0].classList.toggle("aka-color")
+        }
+        guziki[1].onclick =()=>
+        {
+            let aka = document.querySelectorAll("p#id1");
+            aka[0].classList.toggle("aka-color");
+        }
+        guziki[2].onclick =()=>
+        {
+            let lis = document.querySelectorAll("li");
+            lis[0].classList.toggle("lis-border")
+        }
+        guziki[3].onclick =()=>
+        {
+            let lis = document.querySelectorAll("ol li.def");
+            for(var i = 0; i < lis.length; i++)
+                {
+                    lis[i].classList.toggle("lis-txt");
+                }
+        }
+        guziki[4].onclick =()=>
+        {
+            let lis = document.querySelectorAll("li.def");
+            for(var i = 0; i < lis.length; i++)
+                {
+                    lis[i].classList.toggle("bdef");
+                }
+        }
+    </script>
+</body>
+</html>

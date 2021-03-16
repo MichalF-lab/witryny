@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>formularze</title>
+    <style>
+    
+    </style>
+  </head>
+
+  <body>
+      <form method="post" action="mailto:wpo@op.pl" name="ee09"> <!--znacznik inicjujący fomularz-->
+          
+         <span>Wybierz ulubiony owoc </span>           
+        <input type="checkbox" name="owoce" value="banan"/>banan
+        <input type="checkbox" name="owoce" value="jabłko" checked/>jabłko <!--atrybut logiczny checked-->
+        <input type="checkbox" name="owoce" value="winogrono"/>wninogrono<br> <!--tworzy pole wielokrotnego wyboru -->
+                
+          
+        <input type="color" name="kolor"/>wybierz kolor<br> <!--tworzy mikser kolorów, użytkownik może zaznaczyć swój kolor-->
+          
+        <input type="date" name="data"/><br> <!--tworzy pole wyboru daty-->
+        
+        <input type="email" name="email" placeholder="wprowadź email" /> <br> <!--tworzy pole email, dzięki temu od razu sprawdza wprowadzone dane-->
+          
+        <input type="file" name="pliki" />wybierz plik do załączenia <br> <!--tworzy pole umożliwiające załączanie plików do formularza-->
+          
+        <input type="image" src="ryby/Babka%20t%C4%99czowa.jpg" name="obraz" width="50" height="50"/><br> <!--tworzy pole z obrazkiem podanym w atrybucie src-->
+        
+        <label for="licz">ile masz lat
+            <input  id="licz" type="number" name="liczby"/>
+        </label><br><!--tworzy pole do wpisywania wartości liczbowych-->
+          
+        <input type="text" name="imie" placeholder="Podaj imię" size="5" maxlength="7" /><br> <!--tworzy pole tekstowe-->
+        
+        
+        <input type="password" name="haslo"  placeholder="podaj hasło"/><br> <!--tworzy pole hasła, atrybut placeholder pozwala na ustawienia poleenia wenątrz inputa-->
+          
+                  
+        <label for="opinia">Jak podobała Ci się kartkówka w skali 0-10</label>  
+        <input type="range" name="zakres"  min="0" max="10" step="1" id="opinia"/><br> <!--tworzy pole suwak / do pytań o opinię-->
+          
+        
+        <label>Podaj płeć:
+            <input type="radio" name="płeć" value="k"/>kobieta
+            <input type="radio" name="płeć" value="m"/>mężczyzna
+        </label>
+          <!--pole do jednokrotnego wyboru. Pamiętaj musi być ten sam name-->
+        <!--znacznik  label pozwala na stworzenie etykiety zapytania dla kilku pół formularza, musi zamykać się za ostatnim znacznikem dla takiego pytania. Pomaga przeglądarkom i robotom wyszukiwarek-->
+          
+          
+          <input type="reset" name="czyść"/> 
+        
+     
+          
+          <input type="submit" name="przycisk" value="klik"/><br><!--tworzy przycisk-->
+          
+          
+          
+          <textarea placeholder="wpisz opinię" rows="18" cols="18" ></textarea>
+          
+          
+                    
+          <!--tworzy pole wyboru-->
+          <select name="umiejetnosci" multiple>
+               <optgroup label="litery">
+                    <option value="A">A</option>
+                    <option value="b">b</option>
+                    <option value="c">c</option>
+                    <option value="d">d</option>
+                </optgroup>
+                <optgroup label="programy graficzne">
+                    <option value="cdr">CorelDRAW</option>
+                    <option value="ps">Photoshop</option>
+                    <option value="svg">Inkscape</option>
+                    <option value="bmp">Paint3D</option>
+              </optgroup>
+          </select>
+      </form>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<title>DOM, dynamiczna zmiana html</title>
+	<style>
+	body{
+	font-size: 18px;
+	}
+	</style>
+</head>
+<body>
+	<h2 class="abc">Nagłówek z klasą ="abc".</h2>
+	<h3 class="abc">Kolejny nagłówek z klasą ="abc".</h3> 
+	<p class="abc">Akapit z klasą ="abc".</p>
+	<p>Akapit bez klasy</p> 
+    
+	<button >Zmień kolor czcionki pierwszego elementu z klasą="abc"</button><br><br>
+    
+	<button >Zmień kolor tła wszystkich elementów z klasą ="abc"</button><br><br>
+    
+	<button >Zmień kolor tła akapitów</button>
+
+    <button >Usuń efekty</button>
+
+	<script>
+       let guziki = document.querySelectorAll("button");
+        
+        guziki[0].onclick = function(){
+            let kolor_czcionki = document.querySelector(".abc");
+            kolor_czcionki.style.color = "orange";
+            }
+        
+        guziki[1].onclick = ()=> {
+            let tlo = document.querySelectorAll(".abc");
+            for (tlo_wszystko of tlo) {
+                tlo_wszystko.style.backgroundColor = "red";
+            }
+        }
+        
+        guziki[2].onclick = ()=> {
+            let akapity = document.querySelectorAll("p");
+            
+            for (akapity_tlo of akapity){
+                akapity_tlo.style.backgroundColor = "hotpink";
+            }
+        }
+
+        guziki[3].onclick = ()=> {
+            let akapity = document.querySelectorAll(".abc,p");
+            console.log(akapity);
+            for (akapity_tlo of akapity){
+                akapity_tlo.style.backgroundColor = "white";
+                document.querySelector(".abc").style.color = "black";
+            }
+        }
+       
+	</script>
+</body>
+</html>
+

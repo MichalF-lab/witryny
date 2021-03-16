@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8" />
+    <style>
+                div {
+                        width: 60px;
+                        height: 60px;
+                        border: 2px solid;
+                }
+
+                div:nth-of-type(1) {background-color: red;}
+                div:nth-of-type(2) {background-color: blue;}
+                div:nth-of-type(3) {background-color: yellow;}
+                div:nth-of-type(4) {background-color: hotpink;}
+                div:nth-of-type(5) {background-color: white;}
+        </style>
+    </head>
+    <body>
+        <div onclick="red()"></div>
+        <div onmouseover="blue()"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <script>
+            function red(){
+                    document.body.style.backgroundColor = "red";
+            }
+            function blue(){
+                    document.body.style.backgroundColor = "blue";
+            }
+
+            let guziki = document.getElementsByTagName("div");
+
+            guziki[2].onclick = ()=>{
+                document.body.style.backgroundColor = "yellow";
+            }
+            guziki[3].onmouseover = ()=>{
+                document.body.style.backgroundColor = "hotpink";
+            }
+
+            guziki[4].onclick = function(){
+                document.body.style.backgroundColor = "white";
+            }
+        </script>
+    </body>
+</html>

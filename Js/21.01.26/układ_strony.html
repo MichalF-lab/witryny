@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>układ strony powtórka</title>
+        <style>
+            *{
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            main{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            header{
+                width: 100%;
+                height: 120px;
+                background-color: rgb(152, 55, 20);
+                display: flex;
+                justify-content: space-between;
+            }
+
+            img {
+                height: 120px;
+            }
+
+            article{
+                height: 500px;
+                background-color: rgb(255, 127, 80);
+            }
+
+            article:nth-of-type(1){
+                width: 80%;
+            }
+            article:nth-of-type(2){
+                width: 20%;
+            }
+            footer{
+                background-color: rgb(152, 55, 20);
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+            }
+            header a{
+                margin-top: 20px;
+                margin-right: 30px;
+            }
+            button{
+                color: black;
+                border: 1px, solid;
+                padding: 8px;
+                padding-left: 15px;
+                padding-right: 15px;
+                margin: 7px;
+            }
+            
+        </style>
+        <link rel="stylesheet" href=""/>
+    </head>
+    <body>
+         <main>
+             <header>
+                <img src="geometry-1044090_640.jpg" alt="jakies wzorki">
+                <h1>Pomocnik Matematyczny</h1>
+                <a href="#">Dzialania</a>
+                <a href="#">Tabliczka mnożenia</a>
+             </header>
+             <article>
+                <h4>Proste działania</h4>
+                <label>
+                    liczba A: <input type="number" name="" id="a" /> <br>
+                    liczba B: <input type="number" name="" id="b" /> <br>
+                </label>
+                <button onclick="dodawanie()">+</button>
+                <button id = "btn">-</button>
+                <button onclick="mnożenie()">*</button>
+                <button onclick="dzielenie()">/</button>
+                <button onclick="potęgowanie()" >A^B</button>
+                <p id="wynik">Wynik: </p>
+             </article>
+             <article>
+                <ul>
+                    <li>dodawanie</li>
+                    <li>odejmowanie</li>
+                    <li>mnożenie</li>
+                    <li>dzielenie</li>
+                    <li>potęgowanie</li>
+                </ul>
+             </article>
+             <footer>
+                Autor: 0000000000000
+             </footer>
+         </main>
+         <script>
+             function dodawanie(){
+                 let liczbaA = Number(document.getElementById("a").value);
+                 let liczbaB = Number(document.getElementById("b").value);
+
+                 if(liczbaA < 0 || liczbaB < 0){
+                     alert("błedne dane");
+                 }
+                 
+                 else{
+                     document.getElementById("wynik").innerHTML = "wynik " + (liczbaA + liczbaB);
+                 }
+             }
+             document.getElementById("btn").onclick = function(){
+                let liczbaA = Number(document.getElementById("a").value);
+                let liczbaB = Number(document.getElementById("b").value);
+
+                if(liczbaA < liczbaB){
+                    alert("A jest mniejsze od B");
+                    document.getElementById("a").style.borderColor = "red";
+                }
+
+                else{
+                    document.getElementById("wynik").innerHTML = "wynik " + (liczbaA - liczbaB);
+                }
+             }
+             function mnożenie(){
+                 let liczbaA = Number(document.getElementById("a").value);
+                 let liczbaB = Number(document.getElementById("b").value);
+
+                 if(liczbaA < 0 || liczbaB < 0){
+                     alert("błedne dane");
+                 }
+                 
+                 else{
+                     document.getElementById("wynik").innerHTML = "wynik " + (liczbaA * liczbaB);
+                 }
+             }
+             function dzielenie(){
+                 let liczbaA = Number(document.getElementById("a").value);
+                 let liczbaB = Number(document.getElementById("b").value);
+
+                 if( liczbaB = 0){
+                     alert("błedne dane");
+                 }
+                 
+                 else{
+                     document.getElementById("wynik").innerHTML = "wynik " + (liczbaA / liczbaB);
+                 }
+             }
+             function potęgowanie(){
+                 let liczbaA = Number(document.getElementById("a").value);
+                 let liczbaB = Number(document.getElementById("b").value);
+
+                 if(liczbaA < 0 || liczbaB < 0){
+                     alert("błedne dane");
+                 }
+                 
+                 else{
+                     document.getElementById("wynik").innerHTML = "wynik " + (liczbaA ^ liczbaB);
+                 }
+             }
+         </script>
+    </body>
+</html>
