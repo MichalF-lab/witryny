@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <main>
+            <input type="number">Podaj liczbe 1<br>
+            <input type="number">Podaj liczbe 2<br>
+            <input type="number">Podaj liczbe 3<br>
+
+            <button onclick="sortuj()">Posortuj</button>
+            <br>
+            <span>Wynik</span>
+        </main>
+        <!-- Nie jest to dobrze zrobione ale za dużo kodu do ppisania jak  na same ify-->
+        <script>
+            
+            function sortuj(){
+                let a = +document.getElementsByTagName('input')[0].value;
+                let b = +document.getElementsByTagName('input')[1].value;
+                let c = +document.getElementsByTagName('input')[2].value;
+                
+                if (a>b && b>c){
+                    document.getElementsByTagName("span")[0].innerHTML = a+" > "+b+" > "+c;
+                }
+                else if(a>b && c>b){
+                    document.getElementsByTagName("span")[0].innerHTML = a+" > "+c+" > "+b;
+                }
+                else if(c>b && b>a){
+                    document.getElementsByTagName("span")[0].innerHTML = c+" > "+b+" > "+a;
+                }
+                else if(c>b && a>b){
+                    document.getElementsByTagName("span")[0].innerHTML = c+" > "+a+" > "+b;
+                }
+            }
+        </script>
+    </body>
+</html>

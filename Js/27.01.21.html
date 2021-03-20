@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <main>
+
+        </main>
+        <script>
+            var liczba_a = Number(prompt(`wpisz liczbę A:`));
+            var liczba_b = Number(prompt(`wpisz liczbę B:`)); 
+
+
+            
+
+
+            if (isNaN(liczba_a) || isNaN(liczba_b)) alert("is not a number");
+
+            else {
+                if (liczba_a > 0 && liczba_b > 0) alert("they're positive");
+                else if (liczba_a * liczba_b < 0) alert("only one is positive");
+                else alert("they're negative");
+            }
+
+
+            var kolor = prompt("kolor po ang:");
+
+            switch (prompt("podaj kolor").toLocaleLowerCase()) {
+                case "red":
+                document.write("kolor czerwony!!!");
+                break;
+
+                case "blue":
+                document.write("kolor niebieski");
+                break;
+
+                case "orange":
+                document.write("kolor pomaranczowy!");
+                break;
+
+                default:
+                document.write("nie znaleziono takiego koloru");
+            }
+
+
+            var dzien = prompt("wpisz dzień tygodnia:");
+
+            switch (dzien.toLocaleLowerCase()) {
+                case "sobota":
+                case "niedziela":
+                    alert("Miłego weekendu! :)");
+                    break;
+                default:
+                alert("Miłego dnia pracy!!!");
+            }
+        </script>
+    </body>
+</html>
+
