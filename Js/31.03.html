@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<style>
+            .kolor{
+                width: 100%;
+                height: 100px;
+                background-color: blue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+		</style>
+    </head>
+    <body>
+
+    <div class="text"></div>
+    <button id="btn">Przycisk</button>
+    <script>
+
+        function one(){
+            alert("Dziękuje");
+        }
+
+        function two(){
+            let elem = document.createElement("div");
+            elem.innerText = "Tekst w divie";
+            elem.classList.add("kolor");
+            let elem2 = document.querySelector(".text");
+            elem2.appendChild(elem);
+        }
+        btn.addEventListener("click", one);
+        btn.addEventListener("click", two);
+    </script>
+
+
+
+    </body>
+</html>

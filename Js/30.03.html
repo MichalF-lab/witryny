@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<style>
+            .ukryj {display: none;}
+		</style>
+    </head>
+    <body>
+        <h2>formularz</h2>
+            <input type="text" placeholder="podaj imie" id="imie"/><br>
+            <input type="text" placeholder="podaj nazwisko" id="nazwisko"/><br>
+
+            <label>
+                Podaj płeć:<br>
+                    <input type="radio" name="sex" value="meżczyzna"/>męższczyna<br>
+                    <input type="radio" name="sex" value="kobieta"/>kobieta<br>
+            </label>
+
+            <br>
+            <label for="stan_cywilny">Stan cywilny:</label>
+            <select id="stan_cywilny">
+                <option value="wybierz" selected>wybierz</option>
+                <option value="kawaler">kawaler</option>
+                <option value="panna">panna</option>
+            </select>
+
+            <br>
+            komputery<input type="checkbox" value="komputery"/><br>
+            muzyka<input type="checkbox" value="muzyka"/><br>
+            książka<input type="checkbox" value="książka"/><br>
+            motoryzacja<input type="checkbox" value="motoryzacja"/><br>
+
+            odkryj/ukryj opis dodatkowy <input type="checkbox" value="opis" id="opis"/><br>
+            <textarea class="ukryj"></textarea><br>
+            <button id="btn">Podsumowanie</button>
+            <p id="wszystko"></p>
+
+            <script>
+
+                opis.onclic = ()=>{
+                    document.querySelector("textarea").classList.toggle("ukryj");
+                }
+
+                btn.addEventListener("click", ()=>{
+                    wszystko.innerText = "Podsumowanie: ";
+
+                    wszystko.innerText+= "imię:"+imie.value + " nazwisko: "+ nazwisko.value;
+
+                    let plec;
+                    document.querySelectorAll("input[type=radio]").forEach((p)=>{
+                        if(p.checked) plec=p.value;
+                    });
+
+                    wszystko.innerText+=" płeć: "+ plec;
+                    
+                    wszystko.innerText+=" stan cywilny: "+ stan_cywilny.value;
+
+                    let zainteresowania =[];
+                    document.querySelectorAll("input[type=checkbox]").forEach((z)=>{
+                        if(z.checked && z.id != "opis") zainteresowania.push(z.value);
+                    });
+
+                    wszystko.innerText+=" zainteresowanie: "+ zainteresowania.join(", ");
+
+                    wszystko.innerText+=" opisdodatkowy: "+ document.querySelector("textarea").value;
+                });
+            </script>
+    </body>
+</html>

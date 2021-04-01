@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <title>js kartkówka</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+       <h1>Sprawdzamy umiejętności</h1>
+        <div>
+            <p>Akapit pierwszy</p>
+            <p>Akapit drugi</p>
+            <p>Akapit trzeci</p>
+            <a href="#">odnośnik, który jest dzieckiem</a>
+        </div>
+        <a href="#">odnośnik, który jest samodzielny</a>
+        <p>Akapit czwarty</p>
+        <div class="asd">
+            <p>Akapit </p>
+        </div>
+        <button>zmiana 1</button>
+        <button>zmiana 2</button>
+        <button>zmiana 3</button>
+        
+        <!--Napisz skrypt, który przypisze zdarzenia metodą onclick do przycisków:
+
+        1. przycisk 1 - ma pogrubić czcionkę pierwszemu elementowi <a>
+        
+        2. przycisk 2 - ma dodać tło do elementu <div> o klasie asd
+
+        3. przycisk 3 - ma zmienić przeźroczystość dla trzeciego i piątego elementu <p>
+
+        NIE WOLNO DODAWAĆ WŁASNYCH ATRYBUTÓW, stosuj tylko metody querySelector, querySelectorAll, getElementsByClassName, getElementsByTagName
+        -->
+        
+        <script>
+        
+            document.getElementsByTagName("button")[0].onclick = () =>{
+                document.getElementsByTagName("a")[0].style.fontWeight = "bold";
+            }
+
+            //document.getElementsByTagName("button")[1].onclick = function(){
+            //    document.getElementsByClassName("asd")[0].style.backgroundColor = "red";
+            //}
+            
+            document.getElementsByTagName("button")[1].onclick = function(){
+                let ilosc = document.getElementsByClassName("asd").length;
+                for (i=0;i<ilosc;i++){
+                    document.getElementsByClassName("asd")[i].style.backgroundColor = "lightblue";
+                }
+            }
+
+            
+            document.getElementsByTagName("button")[2].onclick = () =>{
+                document.getElementsByTagName("p")[2].style.opacity = "0.5";
+                document.getElementsByTagName("p")[4].style.opacity = "0.5";
+            }
+
+        </script>
+    </body>
+</html>
