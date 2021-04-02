@@ -38,32 +38,43 @@
 
             <script>
 
-                opis.onclic = ()=>{
+                document.getElementById("opis").onclick = ()=>{
                     document.querySelector("textarea").classList.toggle("ukryj");
                 }
 
                 btn.addEventListener("click", ()=>{
-                    wszystko.innerText = "Podsumowanie: ";
+                    wszystko.innerText = "Podsumowanie: \n";
 
-                    wszystko.innerText+= "imię:"+imie.value + " nazwisko: "+ nazwisko.value;
+                    wszystko.innerText+= "imię: "+if_emty(imie.value) + "  nazwisko: "+ if_emty(nazwisko.value) + "\n";
 
                     let plec;
                     document.querySelectorAll("input[type=radio]").forEach((p)=>{
                         if(p.checked) plec=p.value;
                     });
 
-                    wszystko.innerText+=" płeć: "+ plec;
+                    wszystko.innerText+=" płeć: "+ plec + "\n";
                     
-                    wszystko.innerText+=" stan cywilny: "+ stan_cywilny.value;
+                    wszystko.innerText+=" stan cywilny: "+ if_emty(stan_cywilny.value) + "\n";
 
                     let zainteresowania =[];
                     document.querySelectorAll("input[type=checkbox]").forEach((z)=>{
                         if(z.checked && z.id != "opis") zainteresowania.push(z.value);
                     });
 
-                    wszystko.innerText+=" zainteresowanie: "+ zainteresowania.join(", ");
+                    wszystko.innerText+=" zainteresowanie: "+ if_emty(zainteresowania.join(", ")) + "\n";
 
-                    wszystko.innerText+=" opisdodatkowy: "+ document.querySelector("textarea").value;
+                    if (document.getElementById("opis").checked){
+                        wszystko.innerText+=" opisdodatkowy: "+ document.querySelector("textarea").value;
+                    }
+
+                    function if_emty(wartosc){
+                        if (wartosc == 0 || wartosc == "wybierz"){
+                            return "Nie Podano";
+                        }
+                        else{
+                            return wartosc;
+                        }
+                    }
                 });
             </script>
     </body>
