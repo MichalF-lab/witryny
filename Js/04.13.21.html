@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<style>
+            .nowa{
+				text-transform: uppercase;
+			}
+			.size{
+				width: 100%;
+				height: 100px;
+				background-color: aqua;
+			}
+		</style>
+    </head>
+    <body>
+		<h3>rzeczy do zabrania na wakacje</h3>
+
+
+		<script>
+
+			//document.querySelector("h3").innerHTML =  "<b>pójść na siłke<b>";
+			// To jest dozwolone
+
+			//let py = document.createElement("p");
+			//document.body.appendChild(py);
+			// Tworzymy element <p.
+
+			//py.textContent = "tekst";
+			// Tak możemy dodać zwykly tekst
+
+			//let tekst = document.createTextNode("tekst kolejny");
+			//py.append(tekst);
+			// Alternatywa dla tego powyżej
+
+			//--------------------------------------------------------
+
+
+			let lista = document.createElement("ol");
+			document.body.append(lista);
+
+			 
+
+			while(true){
+				//let rzeczy = prompt("wpisz rzeczy do zabrania","")
+				var rzeczy = prompt("wpisz rzeczy do zabrania","");
+				document.body.innerHTML = rzeczy;
+
+				if (!rzeczy){
+					break;
+				}
+			}
+
+
+
+			let pozycje = document.createElement("li");
+			pozycje.textContent = rzeczy;
+
+			lista.appendChild(pozycje);
+			lista.classList.add("nowa");
+		</script>
+    </body>
+
+</html>
