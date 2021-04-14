@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<style>
+            
+		</style>
+    </head>
+    <body>
+        <input type="text" placeholder="wpisz hasło"/>
+        <button id="btn">sprawdź</button>
+        <p></p>
+
+		<script>
+            btn.onclick = ()=>{
+                let dane = document.querySelector("input[type=text]").value;
+                
+               let wzor_hasla1 = /^REX[2-5]{2}\s[a-z]{2,3}[^A]$/gi;
+               //to jest dobrze
+
+                let wzor_hasla2 = new RegExp("REX[2-5]{2}\\s[a-z]{2,3}[^A]","gi");
+                // Zapisujemy jako oobiekt string
+                //musimy umieścić to w cudzysłowach i muszą być 2 \\
+
+                if (wzor_hasla1.test(dane)){
+                    document.querySelector("p").textContent = "hasło poprawne " + dane;
+                }
+                else document.querySelector("p").textContent = "hasło niepoprawne";
+            }
+
+            let text = "proszę się Uczyć";
+            console.log(/uczyć/i.test(text));
+		</script>
+    </body>
+
+</html>
+
