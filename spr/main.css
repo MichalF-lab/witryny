@@ -1,0 +1,28 @@
+header{
+    width: 100%;
+    height: 50px;
+    background-color: lightgray;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+header div{
+    background-color: orangered;
+    height: 30px;
+    margin: 80px;
+}
+
+.section{
+    background-color: gainsboro;
+}
+
+.disableMenu{
+    display: none;
+}
+
+footer{
+    background-color: lightgray;
+}

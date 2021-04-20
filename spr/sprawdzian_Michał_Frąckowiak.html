@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="main.css" />
+    </head>
+    <body>
+	<header>
+		<div>Menu 1</div>
+		<div>Menu 2</div>
+		<div>Menu 3</div>
+		<div>Menu 4</div>
+	</header>
+
+	<br><br>
+
+	<section class="disableMenu">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum pharetra sapien. Pellentesque luctus nunc et sapien facilisis, nec dignissim sem ultrices. Nullam sapien dolor, euismod sit amet iaculis ut, volutpat at felis. Fusce sollicitudin nibh ipsum, sed scelerisque diam rhoncus quis. Nullam ultrices sapien sit amet risus euismod cursus. Duis ultricies placerat lorem, sit amet sollicitudin erat pharetra a. Nullam a facilisis risus, sed lacinia magna. Integer aliquet molestie quam, eu porttitor odio. In id sapien vel sem bibendum dignissim vitae nec eros. Nulla bibendum nulla tellus, eu varius tellus ultricies quis. Aenean maximus et odio vitae ultricies. Proin a felis vitae erat fringilla euismod ultrices in arcu. Sed aliquam malesuada lectus sit amet maximus. Integer luctus nibh non consequat hendrerit. Sed quis risus sed ex varius imperdiet in et nisl. 
+	</section>
+
+	<br><br>
+
+	<footer>
+		Michał Frąckowiak
+	</footer>
+
+	<script>
+
+		let ilosc = document.getElementsByTagName("div").length;
+            for (i=0;i<ilosc;i++){
+                    
+			document.querySelectorAll("div")[i].onmouseover = function(){
+
+					let menu = document.querySelector("section");
+					menu.classList.remove("disableMenu");
+					this.style.opacity = "0.4";
+			}
+
+			document.querySelectorAll("div")[i].onmouseout = function(){
+
+				let menu = document.querySelector("section");
+				menu.classList.add("disableMenu");
+				this.style.opacity = "1";
+			}
+
+
+	}
+	</script>
+
+    </body>
+
+</html>
