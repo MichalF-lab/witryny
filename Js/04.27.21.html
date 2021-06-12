@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="utf-8" />
+		<style>
+            
+		</style>
+    </head>
+    <body>
+        <input type="password" id="pass">
+        <p></p>
+        <br>
+        <br>
+        <br>
+        <input type="email" id="mail" placeholder="podaj email">
+        <input type="text" id="imie" placeholder="podaj imie">
+        <label>wiek</label>
+        <input type="number" id="wiek">
+        <button id="btn">Wypisz</button>
+		<script>
+            pass.onkeyup=function(e){
+                if(e.key=="Enter"){
+                    let haslo = document.querySelector("#pass").value;
+                    let wzor = /^[^A]\d{4}\s[a-z]{2,5}Y$/g;
+                    let wzor2 = new RegExp("[^A]\\d{4}\\s[a-z]{2,5}Y","g");
+
+                    if(wzor.test(dane)){
+                        document.getElementsByTagName("p")[0].textContent="hasło prawidłowe" + dane;
+                    }
+
+                    else{
+                        document.getElementsByTagName("p")[0].textContent="hasło niepoprawne" + dane;
+                    }
+                }
+            }
+
+
+
+            btn.addEventListener("click", spr);
+            function spr(){
+                let a = document.querySelector('#mail').value;
+                let b = document.getElementsByName('imie').value;
+                let c = parseInt(wiek.value);
+
+                let email_pattern = new RegExp("[a-z0-9,_- ]{3,35}@[a-z0-9.-_]{2,}.[a-z]{2,10}","i");
+                if (email_pattern.test(m)){
+                    document.querySelector("p:nth-of-type(2)").textContent = "super mail"+ b + c ;
+                }
+            }
+
+		</script>
+    </body>
+
+</html>
