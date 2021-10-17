@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head> 
+        <meta charset="utf-8">
+        <title>Kalkulator</title>
+        <script defer>
+            function fdodawanie()
+            {
+                let x = +document.getElementById("liczba a").value;
+                let y = +document.getElementById("liczba b").value;
+                document.querySelector("a").innerHTML = "wynik " + (x+y);
+            }
+            function fodejmowanie()
+            {
+                let x = +document.getElementById("liczba a").value;
+                let y = +document.getElementById("liczba b").value;
+                document.querySelector("a").innerHTML = "wynik " + (x-y);
+            }
+            function fmnozenie()
+            {
+                let x = +document.getElementById("liczba a").value;
+                let y = +document.getElementById("liczba b").value;
+                document.querySelector("a").innerHTML = "wynik " + (x*y);
+            }
+            function fdzielenie()
+            {
+                let x = +document.getElementById("liczba a").value;
+                let y = +document.getElementById("liczba b").value;
+                document.querySelector("a").innerHTML = "wynik " + (x/y);
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            Podaj wzrost<input type="number" id="liczba a"><br><br>
+
+            Podaj wage<input type="number" id="liczba b"><br><br>
+            
+            <button onclick=fdodawanie()>dodawanie</button><br>
+            <button onclick=fodejmowanie()>odejmowanie</button><br>
+            <button onclick=fmnozenie()>mnozenie</button><br>
+            <button onclick=fdzielenie()>dzielenie</button><br>
+             
+            <a id="a"></a>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head> 
+        <meta charset="utf-8">
+        <title>Kup mieszkanie</title>
+        <link rel="stylesheet" type="text/css" href="agencja.css" />
+        <script defer>
+
+        </script>
+    </head>
+    <header>   
+        <h2>"O nas"</h2>
+        <section>
+            <a>
+                To jest przykdowy tekst, ktry ma znalesc sie ponizej po lewej
+                Smacznej kawusi wiadomo co kapusi
+            </a>
+        </section>
+    </header>
+    <main>
+        <h2>Kalkulator</h2>
+        <form>
+        <select id="wojewodztwo">
+            <option value="1">Wielkopolskie</option>
+            <option value="2">Mazowieckie</option>
+            <option value="3">Lubuskie</option>
+            <option value="4">Pomorskie</option>
+            <option value="5">Slaskie</option>
+            <option value="6">Inne</option>
+        </select><br><br>
+        metraz<input type="number" id="m"><br><br>
+        liczba pokoi<input type="number" id="r"><br><br>
+        <select id="pietra">
+            <option value="1">1</option>
+            <option value="2">3</option>
+            <option value="2">3</option>
+        </select><br><br>
+        <input type="radio" name="wycena" value="sprzedaz">sprzedaz<br><br>
+        <input type="radio" name="wycena" value="kupno">kupno<br><br>
+        </form>
+    </main>
+    <article>
+        <h2>Opinie</h2>
+        Drogo<br><br>
+        Kradna<br><br>
+        banda zlodzieji<br><br>
+        Sprzedam opla w gazie priv<br><br>
+    </article>
+    <h2>Kontakt</h2>
+    <footer>
+        
+        <form id="left-text">
+            <input type="text" id="imie" placeholder="podaj imie">
+            <input type="email" id="email" placeholder="podaj email">
+            <input type="text" id="tresc" placeholder="dawaj tresc">
+            <input type="submit" value="wysli" onclick=wyslij()>
+        </form>
+        <a id="dziala"></a>
+
+        <div id="right-text">
+            U nas moze nie jest dobrze<br>
+            ale napewno nie za tanio
+        </div>
+    </footer>
+
+</html>
