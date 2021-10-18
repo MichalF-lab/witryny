@@ -21,3 +21,18 @@ footer
 {
     width: 60%;
 }
+#obrazek
+{
+    width: 300px;
+    height: 120px;
+}
+section
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+article div
+{
+    background-color: powderblue;
+}

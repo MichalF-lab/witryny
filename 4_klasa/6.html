@@ -5,56 +5,95 @@
         <title>Kup mieszkanie</title>
         <link rel="stylesheet" type="text/css" href="agencja.css" />
         <script defer>
+            function policz()
+            {
+                let woj = +document.getElementById("wojewodztwo").value;
+                let m = +document.getElementById("m").value;
+                let r = +document.getElementById("r").value;
+                let pietra = +document.getElementById("pietra").value;
 
+                let czynnosc = 0;
+                document.getElementsByName("wycena").forEach((cel) =>
+                {if(cel.checked) czynnosc = cel.value;})
+                
+                
+                let suma = (woj*m+r*1000+pietra*5000) * czynnosc;
+                document.getElementById("output").innerHTML = suma + " zl";
+            }
+            function wyslij()
+            {
+                let a = document.getElementById("imie").value; 
+                let b = document.getElementById("email").value; 
+                let c = document.getElementById("tresc").value; 
+                if(a != "" && b != "" && c != "")
+                alert("wyslano");
+            }
         </script>
     </head>
-    <header>   
+    <header>
         <h2>"O nas"</h2>
         <section>
             <a>
-                To jest przykdowy tekst, ktry ma znalesc sie ponizej po lewej
+                To jest przykdowy tekst, ktry ma znalesc sie ponizej po lewej<br>
                 Smacznej kawusi wiadomo co kapusi
             </a>
+            <img id = "obrazek" src="obrazek.jpg">
         </section>
     </header>
+    <h2>Kalkulator</h2>
     <main>
-        <h2>Kalkulator</h2>
         <form>
-        <select id="wojewodztwo">
-            <option value="1">Wielkopolskie</option>
-            <option value="2">Mazowieckie</option>
-            <option value="3">Lubuskie</option>
-            <option value="4">Pomorskie</option>
-            <option value="5">Slaskie</option>
-            <option value="6">Inne</option>
-        </select><br><br>
-        metraz<input type="number" id="m"><br><br>
-        liczba pokoi<input type="number" id="r"><br><br>
-        <select id="pietra">
-            <option value="1">1</option>
-            <option value="2">3</option>
-            <option value="2">3</option>
-        </select><br><br>
-        <input type="radio" name="wycena" value="sprzedaz">sprzedaz<br><br>
-        <input type="radio" name="wycena" value="kupno">kupno<br><br>
+            <select id="wojewodztwo">
+                <option value="6691">Wielkopolskie</option>
+                <option value="11356">Mazowieckie</option>
+                <option value="5206">Lubuskie</option>
+                <option value="9351">Pomorskie</option>
+                <option value="10000">Slaskie</option>
+                <option value="8200">Inne</option>
+            </select><br><br>
+
+
+            metraz<input type="number" id="m"><br><br>
+            liczba pokoi<input type="number" id="r"><br><br>
+
+
+            <select id="pietra">
+                <option value="3">1</option>
+                <option value="2">2</option>
+                <option value="1">3</option>
+            </select><br><br>
+
+
+            <input type="radio" name="wycena" value="0.9" class="elo">sprzedaz<br><br>
+            <input type="radio" name="wycena" value="1.1" class="elo">kupno<br><br>
+
+
+            <input type="button" onclick=policz() value="oblicz"></input><br><br>
+
+
+            <output id="output">Przewidywalna cena :</output>
         </form>
     </main>
+
+    <h2>Opinie</h2>
+
     <article>
-        <h2>Opinie</h2>
-        Drogo<br><br>
-        Kradna<br><br>
-        banda zlodzieji<br><br>
-        Sprzedam opla w gazie priv<br><br>
+        <div>Drogo</div><br><br>
+        <div>Kradna</div><br><br>
+        <div>banda zlodzieji</div><br><br>
+        <div>Sprzedam opla w gazie priv</div><br><br>
     </article>
+
     <h2>Kontakt</h2>
+
     <footer>
-        
         <form id="left-text">
-            <input type="text" id="imie" placeholder="podaj imie">
-            <input type="email" id="email" placeholder="podaj email">
-            <input type="text" id="tresc" placeholder="dawaj tresc">
+            <input type="text" id="imie" placeholder="podaj imie" required>
+            <input type="email" id="email" placeholder="podaj email" required>
+            <input type="text" id="tresc" placeholder="dawaj tresc" required>
             <input type="submit" value="wysli" onclick=wyslij()>
         </form>
+        
         <a id="dziala"></a>
 
         <div id="right-text">
