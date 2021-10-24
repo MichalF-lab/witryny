@@ -8,22 +8,7 @@
             {
                 let x = +document.getElementById("wzrost").value;
                 let y = +document.getElementById("waga").value;
-                let BMI = y/(x*x);
-                let waga;
-
-                if(BMI > 25)
-                {
-                    waga = "Nadwaga";
-                }else
-                if(BMI > 25 && BMI > 18.5)
-                {
-                    waga = "Norma";
-                }else
-                if(BMI < 18.5)
-                {
-                    waga = "Niedowaga";
-                }
-                document.querySelector("a").innerHTML = BMI +" " + waga;
+                document.querySelector("a").innerHTML = y/(x*x);
                 
             }
         </script>

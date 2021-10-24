@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Formatowanie</title>
+    <link href="styl2.css" rel="stylesheet">
+    <script defer>
+        function red()
+        {
+            document.getElementById("outpuut").style.color = "red";
+            sprawdz();
+        }
+        function blue()
+        {
+            document.getElementById("outpuut").style.color = "blue";
+            sprawdz();
+        }
+        function green()
+        {
+            document.getElementById("outpuut").style.color = "green";
+            sprawdz();
+        }
+
+        function sprawdz()
+        {
+            let x = document.getElementById("select").value;
+            if(x == "prosty") document.getElementById("outpuut").style.fontStyle = "normal";
+            else document.getElementById("outpuut").style.fontStyle = "italic";
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Formatowanie dokumentów HTML</h1>
+    </header>
+
+    <section>
+        <h2>Przykład listy -hobby</h2>
+
+        <ul>
+            <li>muzyka</li>
+            <li>turystyka</li>
+            <ol>
+                <li>góry</li>
+                <li>jeziora</li>
+                <li>na rowerze</li>
+            </ol>
+            <li>książki</li>
+        </ul>
+        Przykład tabeli -rozkład dnia
+        <br>
+        <br>
+        <br>
+        <table>
+            <tr>
+                <th>Pora dnia</th>
+                <th>obowiązki</th>
+            </tr>
+            <tr>
+                <td>rano</td>
+                <td>nauka</td>
+            </tr>
+            <tr>
+                <td>południe</td>
+                <td>zajęcia dodatkowe</td>
+            </tr>
+            <tr>
+                <td>popołudnie</td>
+                <td rowspan="2">moje hobby</td>
+            </tr>
+            <tr>
+                <td>wieczór</td>
+            </tr>
+        </table>
+
+    </section>
+
+    <main>
+        <form>
+            "Podaj rozmiar tekstu w procentach
+            <input type="number" id="procenty">%
+
+            <select id="select">
+                <option value="prosty">prosty</option>
+                <option value="kursywa" >kursywa</option>
+            </select>
+
+            <input type="button" onclick=red()></input>
+            <input type="button" onclick=blue()></input>
+            <input type="button" onclick=green()></input>
+        </form>
+
+        <div id="outpuut">
+            To jest przykład paragrafu, który może być dowolnie formatowany 
+            przez Java Script
+        </div>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <form>
+
+        <nav>
+            <a href="index.html">gowna strona</a>
+            <a href="cos.html">wypunktowana</a>
+            <a href="cos_v2.html">tabela</a>
+            <a href="haha.html">link do podstrony</a>
+        </nav>
+    
+        <!-- Smieszek -->
+        <div>Podaj imie</div>
+        <input type="text">
+
+        <br><br>
+
+        <div>Podaj wiek</div>
+        <input type="number">
+
+        <br><br>
+
+        <div>Podaj nr tel</div>
+        <input type="text" id="tel">
+        <a id="napis"></a>
+
+        <br><br>
+
+        <button onmouseover="fo">Wyślij</button>
+    </form>
+</body>
+
+<script>
+    fo(); {
+        let a = document.getElementById("tel");
+        if (a < 100000000 & a > 999999999) {
+            document.getElementById("napis").innerHTML = "to nie jest poprawny numer";
+        }
+    }
+</script>
+
+</html>

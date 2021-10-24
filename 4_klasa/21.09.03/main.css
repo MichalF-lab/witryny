@@ -1,0 +1,23 @@
+a {
+    border: 50cm;
+    background-color: lavender;
+}
+
+html {
+    background-color: aqua;
+    font-style: italic;
+}
+
+nav{
+    
+	background-color: #1dd85b;
+	display: flex;
+	justify-content:space-around;
+	padding: 5px;
+}
+
+nav a{
+	display: flex;
+	justify-content: center;
+	text-decoration: none;
+}

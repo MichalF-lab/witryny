@@ -36,3 +36,9 @@ article div
 {
     background-color: powderblue;
 }
+h2 img
+{
+    display: flex;
+    justify-content: space-between;
+    height: 3px;
+}
