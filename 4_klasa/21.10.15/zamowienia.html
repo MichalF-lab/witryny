@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hurtowania</title>
+        <link href="styl4.css" rel="stylesheet">
+        <script defer>
+            function zamow()
+            {
+                let c = 0;
+                let x = +document.getElementById("id_kawy").value;
+                if(x==1)c = 5;
+                if(x==2)c = 7;
+                if(x==3)c = 6;
+                let m = +document.getElementById("id_wagi").value;
+                document.getElementById("wynik").innerHTML = 
+                "Koszt zamówienia wynosi" + c*m + " zl";
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <img src="logo1.png" alt="hurtownia">
+            <nav>
+                <a href="index.html">Strona glowna</a>
+                <a href="zamowienia.html">Zamowienia</a>
+                <a href="blog.html">Blog o kawie</a>
+                <a href=" htttp://gatunki-kawy.pl" target="_blank">Odwiedź także</a>
+            </nav>
+        </header>
+
+        <h1>Hurtownia kawy</h1>
+
+        <main>
+            <section>
+                <h2>Oferta</h2>
+                <ol>
+                    <li>Kawa palona Arabica</li>
+                    <li>Kawa palona Robusta</li>
+                    <li>Kawa bezkofeinowa</li>
+                    <li>Kawa zielona</li>
+                </ol>
+            </section>
+            <formm>
+                Podaj numer kawy<br>
+                <input type="number" id="id_kawy"><br>
+                Podaj wage w dekagramach<br>
+                <input type="number" id="id_wagi"><br>
+                <button onclick=zamow()>zamow</button><br>
+                <p id="wynik"></p><br>
+            </formm>
+            </main>
+
+        <footer>Strone przygotowal: <b>Michal Frackowiak</b></footer>
+    </body>
+</html>
