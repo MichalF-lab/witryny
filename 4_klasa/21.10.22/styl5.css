@@ -1,0 +1,65 @@
+header
+{
+    background-color: #009999;
+    color: white;
+    text-align: center;
+    height: 80px;
+}
+
+nav{display: flex;}
+
+nav div
+{
+    font-family: Arial;
+    background-color: #009999;
+    color: white;
+    text-align: center;
+    width: 25%;
+    height: 150px;
+    margin: 0%  ;
+}
+
+main{display: flex;}
+
+main div
+{
+    background-color: #669999;
+    color: white;
+    width: 30%;
+    height: 600px;
+}
+
+main span
+{
+    background-color: #99CCCC;
+    width: 40%;
+    height: 600px;
+}
+
+#n
+{
+    height: 100%;
+    width: auto;
+}
+footer
+{
+    background-color: #009999;
+    color: white;
+    text-align: right;
+}
+table, td
+{
+    border: solid;
+    border-color: green;
+    text-align: center;
+    border-width: 1px;
+}
+
+button
+{
+    border: none;
+    margin: 10px;
+    background-color: green;
+    color: white;
+}
+

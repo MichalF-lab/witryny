@@ -4,8 +4,74 @@
         <meta charset="utf-8">
         <title>Portal ogloszeniowy</title>
         <script defer>
-
+            function licz()
+            {
+                let x = +document.getElementById("ile").value;
+                let y = 0;
+                if (document.getElementById("new").checked) y = 0.2;
+                let z = 1;
+                if(x<51) z = 2;
+                document.getElementById("out").innerHTML = "Koszt ogłoszeń: "+
+                    (z*x-x*y)+" PLN"; 
+            }
         </script>
         <link rel="stylesheet" href="styl5.css">
     </head>
+    <header>
+        <h1>Portal ogloszeniowy</h1>
+    </header>
+    <nav>
+        <div><img src="logo-male.png"></div>
+        <div>
+            <h3>Adres</h3><br>
+            <span>ul. Morska 45 Gdynia</span>
+        </div>
+        <div>
+            <h3>telefon</h3><br>
+            <span>601601601</span>
+        </div>
+        <div>
+            <h3>e-mail</h3><br>
+            <span>ogloszenia@poczta.pl</span>
+        </div>
+    </nav>
+    <main>
+        <div>
+            <h2>Ceny ogloszen</h2>
+            <table>
+                <tr>
+                    <td>Liczba ogloszen</td>
+                    <td>Cena ogloszen</td>
+                    <td>Bonus BGC</td>
+                </tr>
+                <tr>
+                    <td>1- 50</td>
+                    <td>2 PLN</td>
+                    <td rowspan="2">Subskrybcja newslettera to upust 0,20 PLN na <br> ogloszenie</td>
+                </tr>
+                <tr>
+                    <td>51 i wiecej</td>
+                    <td>1 PLN</td>
+                </tr>
+            </table>
+        </div>
+
+        <span>
+            <h2>Witamy na stronie naszego portalu</h2>
+            <img id="n" src="logo-duze.png" alt="ogloszenia">
+        </span>
+
+        <div>
+            <h2>Ile kosztuje ogloszenie?</h2>
+            Podaj liczbe ogloszen:
+            <input type="number" id="ile"><br>
+            <input type="checkbox" id="new">
+            Policz upust na newsletter<br><br>
+            <button onclick=licz()>oblicz</button><br><br>
+            <output id="out"></output>
+        </div>
+    </main>
+    <footer>
+        Portal ogłoszeniowy opracował: Michal Frackowiak 4D
+    </footer>
 </html>
