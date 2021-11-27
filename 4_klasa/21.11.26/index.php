@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <title>Odżywianie zwierząt</title>
         <link rel="stylesheet" href="style4.css">
-        <script>function fun(){window.location.reload()}</script>
     </head>
     <body>
         <header><h2>DRAPIEŻNIKI I INNE</h2></header>
@@ -12,13 +11,14 @@
             <h3>
                 Wybierz styl życia:
             </h3>
-            <form method="POST" action="index.php">
+            <form method="POST">
                 <select name="zycie">
-                    <option value=1 onclick=fun()>Drapieżniki</option>
-                    <option value=2 onclick=fun()>Roślinożerne</option>
-                    <option value=3 onclick=fun()>Padlinożerne</option>
-                    <option value=4 onclick=fun()>Wszystkożerne</option>
+                    <option value=1>Drapieżniki</option>
+                    <option value=2>Roślinożerne</option>
+                    <option value=3>Padlinożerne</option>
+                    <option value=4>Wszystkożerne</option>
                 </select>
+                <input type="submit" value="Zobacz">    
             </form>
         </nav>
         <main>
@@ -52,8 +52,22 @@
                 <!--skrypt 2-->
                 <?php
                     $connect = new mysqli("localhost","root","","baza");
-                    $sql = "SELECT 'rodzaj' FROM `odzywianie`
-                    WHERE id = "
+                    $sql = "SELECT zwierzeta.id, gatunek, zwierzeta.wystepowanie 
+                    FROM `zwierzeta` 
+                    JOIN odzywianie on odzywianie.id = zwierzeta.Odzywianie_id 
+                    WHERE odzywianie.id = $_POST[zycie]";
+                    $result = $connect->query($sql);
+                    $iterator = 0;
+                    while($wiersz = $result->fetch_assoc())
+                    {
+                        foreach($wiersz as $wynik)
+                        {
+                            if($iterator%3==0) echo "$wynik ";
+                            if($iterator%3==1) echo "$wynik ";
+                            if($iterator%3==2) echo "$wynik<br>";
+                            $iterator++;
+                        }
+                    }
                     $connect->close();
                 ?>
             </div>
