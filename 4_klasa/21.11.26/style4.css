@@ -1,0 +1,30 @@
+body{font-family: helvetica;}
+
+header{background-color: darkcyan;
+    color: white;
+    text-align: center;
+    padding: 20px;}
+
+nav{background-color: lightseagreen;
+    text-align: center;
+    padding: 60px;}
+
+main{display: flex;}
+
+#a,#b{background-color: teal;
+    color: white;
+    text-align: center;
+    height: 350px;
+    width: 25%;}
+
+#c{background-color: teal;
+    height: 350px;
+    width: 50%;}
+
+footer{background-color: lightseagreen;
+    text-align: center;
+    padding: 60px;}
+
+#d{border: 4px;
+    border-style: dotted;
+    border-color: rgb(127, 255, 212);}    
