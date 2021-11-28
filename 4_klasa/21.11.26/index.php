@@ -79,4 +79,3 @@
         </footer>
     </body>
 </html>
-<!--<ol>$wiersz[zwierzeta.gatunek]<ol> echo $wiersz['zwierzeta.'.'gatunek']; -->
