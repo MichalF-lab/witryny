@@ -1,0 +1,53 @@
+body{font-family: Verdana;}
+header{display: flex;}
+
+#a
+{
+    background-color: sienna;
+    height: 100px;
+    width: 20%;
+}
+
+#b
+{
+    background-color: sienna;
+    color: orange;
+    height: 100px;
+    width: 80%;
+}
+
+main{display: flex;}
+
+#l
+{
+    background-color: burlywood;
+    height: 700px;
+    width: 70%;
+}
+
+#p
+{
+    background-color: burlywood;
+    height: 700px;
+    width: 30%;
+}
+
+footer
+{
+    background-color: sienna;
+    color: orange;
+    text-align: center;
+}
+
+img
+{
+    margin: 7px;
+    padding: 5px;
+    border-style: solid;
+    border-color: rosybrown;
+}
+
+img:hover
+{
+    border-color: maroon;    
+}

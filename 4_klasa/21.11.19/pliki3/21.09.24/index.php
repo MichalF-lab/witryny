@@ -33,7 +33,7 @@
                 <h2>Wybrano filmy</h2>
                 <?php
                     
-                    if(isset($_POST))
+                    if(isset($_POST['gatunek']))
                     {
                         $connect = new mysqli("localhost","root","","dane");
                         $sql = "SELECT filmy.tytul, filmy.rok, filmy.ocena FROM filmy JOIN gatunki ON filmy.gatunki_id = gatunki.id WHERE gatunki.nazwa='$_POST[gatunek]'";
@@ -45,25 +45,21 @@
                           LABEL;
                         }
                         $connect->close();
-                    }  
+                    }
+                    else{echo "Wybierz kategorie"}  
                 ?>
             </section>
             <section>
                 <h2>Wszytskie filmy</h2>
                 <?php
-                    if(isset($_POST))
+                    $connect = new mysqli("localhost","root","","dane");                        $sql = "SELECT filmy.id, filmy.tytul, rezyserzy.imie, rezyserzy.nazwisko FROM filmy JOIN rezyserzy on rezyserzy.id = filmy.rezyserzy_id";
+                    $results = $connect->query($sql);
+                    while($wiersz = $results->fetch_assoc())
                     {
-                        $connect = new mysqli("localhost","root","","dane");
-                        $sql = "SELECT filmy.id, filmy.tytul, rezyserzy.imie, rezyserzy.nazwisko FROM filmy JOIN rezyserzy on rezyserzy.id = filmy.rezyserzy_id";
-                        $results = $connect->query($sql);
-                        while($wiersz = $results->fetch_assoc())
-                        {
                         echo <<< LABEL
                             "$wiersz[id] $wiersz[tytul] reżyseria: $wiersz[imie] $wiersz[nazwisko]<br>    
                         LABEL;
-                        }
-                        $connect->close();
-                    }  
+                    }
                 ?>
             </section>
         </main>

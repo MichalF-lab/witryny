@@ -1,0 +1,4 @@
+1 select grzyby.nazwa, grzyby.potoczna from grzyby WHERE grzyby.jadalny = true; 
+2 select grzyby.nazwa, grzyby.potoczna, rodzina.nazwa from grzyby JOIN rodzina ON rodzina.id = grzyby.rodzina_id JOIN potrawy on grzyby.potrawy_id = potrawy.id WHERE potrawy.nazwa ="sos"; 
+3 select grzyby.nazwa_pliku, grzyby.potoczna from grzyby;
+4 ALTER TABLE rodzina ADD opis varchar(180); 

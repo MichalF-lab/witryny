@@ -1,3 +1,4 @@
 1 SELECT filmy.tytul, filmy.rok, filmy.ocena FROM filmy JOIN gatunki ON filmy.gatunki_id = gatunki.id WHERE gatunki.nazwa='komedia';
 2 SELECT filmy.id, filmy.tytul, rezyserzy.imie, rezyserzy.nazwisko FROM filmy JOIN rezyserzy on rezyserzy.id = filmy.rezyserzy_id; 
 3 SELECT filmy.id, filmy.tytul FROM filmy WHERE filmy.rok = 2017 AND filmy.ocena =6;
+4 UPDATE rezyserzy SET imie = "Francis Ford" WHERE id=8; 
