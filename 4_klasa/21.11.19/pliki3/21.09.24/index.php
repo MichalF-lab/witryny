@@ -52,7 +52,8 @@
             <section>
                 <h2>Wszytskie filmy</h2>
                 <?php
-                    $connect = new mysqli("localhost","root","","dane");                        $sql = "SELECT filmy.id, filmy.tytul, rezyserzy.imie, rezyserzy.nazwisko FROM filmy JOIN rezyserzy on rezyserzy.id = filmy.rezyserzy_id";
+                    $connect = new mysqli("localhost","root","","dane");                        
+                    $sql = "SELECT filmy.id, filmy.tytul, rezyserzy.imie, rezyserzy.nazwisko FROM filmy JOIN rezyserzy on rezyserzy.id = filmy.rezyserzy_id";
                     $results = $connect->query($sql);
                     while($wiersz = $results->fetch_assoc())
                     {
