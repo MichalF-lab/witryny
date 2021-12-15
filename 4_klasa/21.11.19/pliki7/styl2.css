@@ -1,0 +1,12 @@
+body{font-family: Verdana;}
+
+header
+{
+    display: flex;    
+}
+.logo
+{
+    background-color: #ff9f79;
+    color: green;
+    height: 270px;
+}

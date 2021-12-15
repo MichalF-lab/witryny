@@ -1,0 +1,4 @@
+1 SELECT id, nazwa, opis, cena FROM podzespoly WHERE cena < 1000;
+2 SELECT nazwa, opis FROM podzespoly WHERE producenci_id = 1 AND dostepnosc = true;
+3 SELECT podzespoly.nazwa, producenci.nazwa FROM podzespoly JOIN producenci ON producenci.id = podzespoly.producenci_id;
+4 UPDATE producenci SET producenci.nazwa = "PATRIOT" WHERE producenci.nazwa = "Patriot";

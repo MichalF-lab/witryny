@@ -1,0 +1,4 @@
+1 SELECT nazwa,opis,cena FROM podzespoly WHERE podzespoly.typy_id=1;
+2 SELECT id,nazwa FROM podzespoly WHERE podzespoly.dostepnosc = 1 AND cena < 400;
+3 SELECT nazwa,typy.kategoria FROM podzespoly JOIN typy on typy.id=podzespoly.id WHERE podzespoly.typy_id=1;
+4 ALTER TABLE typy ADD COLUMN opis text;

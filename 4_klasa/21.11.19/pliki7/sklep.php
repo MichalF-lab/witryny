@@ -8,7 +8,7 @@
     <body>
         <header>
             <span><img src="zad1.png" alt="hurtowania komputerowa"></span>
-            <nav>
+            <nav id="logo">
                 <ol>
                     <li>sprzet
                         <ul>
@@ -35,6 +35,7 @@
         <main>
             <h1>Podzespoły we wskazanej kategorii</h1>
             <!--skrypt 1-->
+
         </main>
         <footer>
             <span>Hurtownia działa od poniedziałku do soboty w godzinach 7<sup>00</sup> - 14<sup>00</sup></span>

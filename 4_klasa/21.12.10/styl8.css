@@ -1,0 +1,54 @@
+body{font-family: Georgia;}
+
+header {display: flex;}
+
+header nav, header div
+{
+    background-color: #63ac74;
+    color: orange;
+    height: 140px;
+    width: 50%;
+    text-align: right;
+    font-size: 160%;
+}
+
+main
+{
+    background-color: #e3f6e7;
+    height: 500px;
+    padding: 20px;
+}
+
+footer {display: flex;}
+
+.fot
+{
+    background-color: #63ac74;
+    height: 150px;
+    width: 25%;
+}
+
+a
+{
+    color: orange;
+    margin: 15px;
+}
+
+table
+{
+    width: 100%;
+    border: 2px;
+    border-style: solid;
+    border-color: green;
+}
+
+th
+{
+    background-color: #63ac74;
+    color: white;
+}
+
+.cena
+{
+    text-align: right;
+}
