@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8">
         <title>Hurtownia</title>
-        <link href="styl2.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="styl2.css">
     </head>
     <body>
         <header>
-            <span><img src="zad1.png" alt="hurtowania komputerowa"></span>
-            <nav id="logo">
+            <span><img src="komputer.png" alt="hurtowania komputerowa"></span>
+            <nav>
                 <ol>
                     <li>sprzet
                         <ul>

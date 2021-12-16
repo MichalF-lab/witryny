@@ -1,0 +1,49 @@
+body{font-family: "garamond";}
+
+header
+{
+    background-color: rosybrown;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+#formularz
+{
+    background-color: darksalmon;
+    text-align: center;
+    padding: 40px;
+    list-style-position: inside;
+}
+
+main{display: flex;}
+
+.main
+{
+    background-color: lightsalmon;
+    height: 300px;
+    width: 30%;
+}
+
+#mid
+{
+    background-color: lightsalmon;
+    height: 300px;
+    width: 40%;
+}
+
+footer
+{
+    background-color: rosybrown;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+ol
+{
+    border: 2px;
+    border-style: solid;
+    border-color: rgb(205, 92, 92);
+    font-size: 150%;
+}

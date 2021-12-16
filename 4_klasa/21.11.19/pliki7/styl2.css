@@ -4,9 +4,49 @@ header
 {
     display: flex;    
 }
-.logo
+header span
+{
+    background-color: #ff9f79;
+    height: 270px;
+    width: 30%;
+}
+
+header nav,header div
 {
     background-color: #ff9f79;
     color: green;
     height: 270px;
+    width: 35%;
 }
+
+main
+{
+    background-color: #80CDAC;
+    height: 400px;
+    padding: 30px;
+    text-align: center;
+}
+
+footer
+{
+    background-color: #188256;
+    height: 150px;
+    padding: 10px;
+}
+
+a
+{
+    background-color: green;
+    padding: 10px;
+    margin: 10px;
+    border: 2px;
+    border-style: solid;
+    border-color: orange;
+    
+}
+
+a:visited
+{
+    background-color: violet;
+}
+
