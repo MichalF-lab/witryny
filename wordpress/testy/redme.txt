@@ -1,0 +1,5 @@
+baza: testy
+prefiks tabel MF4D
+
+Użytowik: Admin
+hasło: Masło123
