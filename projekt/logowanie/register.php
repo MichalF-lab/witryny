@@ -17,7 +17,7 @@
 <body class="hold-transition register-page" style="background-color: #454d55">
 <div class="register-box">
   <div class="register-logo">
-    <a href="../AdminLTE-3.1.0s/index2.html"><b>N</b>Bank</a>
+    <b>N</b>Bank
   </div>
   </div>
 
@@ -100,7 +100,7 @@
             <div class="icheck-primary">
               <input type="checkbox" id="agreeTerms" name="terms" value="agree">
               <label for="agreeTerms">
-               Zgadzam się na <a href="#">warunki użytkowania</a>
+               Zgadzam się na <a href="../dokumenty/Regulamin_swiadczenia_uslug_w_ramach_prowadzenia_rachunkow_KI.pdf">warunki użytkowania</a>
               </label>
             </div>
           </div>

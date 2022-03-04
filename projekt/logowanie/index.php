@@ -18,7 +18,7 @@
 <body class="hold-transition login-page" style="background-color: #454d55">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../AdminLTE-3.1.0/index2.html"><b>N</b>Bank</a>
+    <b>N</b>Bank
   </div>
   <!-- /.login-logo -->
   <div class="card" >
