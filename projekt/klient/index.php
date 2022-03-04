@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard 3</title>
+  <title>NBank</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../AdminLTE-3.1.0/dist/css/adminlte.min.css">
+
+  <!-- My style -->
+  <link rel="stylesheet" href="../style/radio.css">
+  <link rel="stylesheet" href="../style/btn.css">
 </head>
 <!--
 `body` tag options:
@@ -42,7 +46,7 @@
       <!-- Sidebar user panel (optional) -->
       
         <div class="info">
-          <a href="#" class="d-block">Artur stachowiak<!-- AAAAAAAAAAAAAAAAAAAAAAAA --></a>
+          <a href="#" class="d-block">Artur stachowiak<!-- skrypt --></a>
         </div>
       </div><br>
 
@@ -55,13 +59,13 @@
           
           
           <li class="nav-header">Finanse</li>
-          <!--                          WAZZZZZZNNNNNNNEEEEEEEEEEEEEEEEE             -->
+          <!-- skrypt -->
           <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
+            <a href="..\czat\index.php" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
                 Uzyskaj pomoc
-                <span class="badge badge-info right">2</span>
+                <span class="badge badge-info right">2<!-- skrypt --></span>
               </p>
             </a>
           </li>
@@ -74,7 +78,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/kanban.html" class="nav-link">
+            <a href="przelew.php" class="nav-link">
               <i class="nav-icon far fa-plus-square"></i>
               <p>
                 Nowy Przelew
@@ -124,19 +128,25 @@
             <div class="card">
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Weź kredyt</h3>
+                  <h1 class="card-title">Weź kredyt</h1>
                 </div>
               </div>
               <div class="card-body">
                 <!-- Skrypt -->
+                <form action="../skrypty/wezkredyt.php" method="POST">
+                  <h3>Kwota kredytu</h3>
+                  <input type="range" min="100" max="10000" value="2000" step="100" class="slider" id="myRange1">
+                  <h5><span id="demo1"></span> zł</h5>
+                  <br>
+                  <h3>Ilość rat</h3>
+                  <input type="range" min="1" max="30" value="15" class="slider" id="myRange2">
+                  <h5><span id="demo2"></span> rat</h5>
+                
+                  <input type="submit" value="Weź kredyt" class="btn button">
+                </form>
 
-                <div class="position-relative mb-4">
-                  <canvas id="visitors-chart" height="200"></canvas>
-                </div>
 
-                <div class="d-flex flex-row justify-content-end">
-                 
-                </div>
+
               </div>
             </div>
             <!-- /.card -->
@@ -232,6 +242,7 @@
                     </td>
                   </tr>
                   
+                  
                   </tbody>
                 </table>
               </div>
@@ -244,7 +255,6 @@
               <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
                   <h3 class="card-title">Stan konta</h3>
-                  <a href="javascript:void(0);">zobacz stan konta</a>
                 </div>
               </div>
               <div class="card-body">
@@ -252,6 +262,7 @@
                   <p class="d-flex flex-column">
                     <span class="text-bold text-lg">$18,230.00</span>
                     <!-- skrypt -->
+                    <!-- spłata kredytu skrypt -->
                   </p>
                 </div>
                 <!-- /.d-flex -->
@@ -296,17 +307,14 @@
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+<script src="../AdminLTE-3.1.0/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../AdminLTE-3.1.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
-<script src="dist/js/adminlte.js"></script>
+<script src="../AdminLTE-3.1.0/dist/js/adminlte.js"></script>
 
-<!-- OPTIONAL SCRIPTS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard3.js"></script>
+<!-- MY SCRIPTS -->
+<script src="../skrypty/kredyt.js"></script>
+
 </body>
 </html>
