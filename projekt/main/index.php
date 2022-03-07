@@ -11,7 +11,7 @@
         </style>
     </head>
     <body>
-        <a href="..\logowanie\">
+        <a href="..\log_in\">
             <img src="..\logo\Przechwytywanie.PNG">
         </a>
     </body>

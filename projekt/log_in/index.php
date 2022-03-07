@@ -25,9 +25,9 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg" >Zaloguj się</p>
 
-      <form action="../AdminLTE-3.1.0/index3.html" method="post">
+      <form action="../script/login.php" method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="login">
+          <input type="text" class="form-control" placeholder="login" name="user">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -35,7 +35,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Haslo">
+          <input type="password" class="form-control" placeholder="Haslo" name="pass">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -65,6 +65,9 @@
       <p class="mb-0">
         <a href="register.php" class="text-center">Założ konto</a>
       </p>
+      <?php
+      if(isset($_GET['error'])) echo 'błedny login lub hasło';
+      ?>
     </div>
     <!-- /.login-card-body -->
   </div>
