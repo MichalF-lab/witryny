@@ -4,19 +4,15 @@
     $result = $connect->query($sql);
     while($wiersz = $result->fetch_assoc())
     {
-        $klient = $wiersz['pas'];
+        echo $wiersz['pas'];
         echo "<br>";
-        $server = sha1($_POST['pass']);
-        $a = 80;
-        echo strlen ($klient)." ";
-        echo strlen ($server);
-        #echo [$a];
-        if($klient == $server)
+        echo sha1($_POST['pass']);
+        if(sha1($_POST['pass']) == $wiersz['pas'])
         {
             $_SESSION['user'] = $_POST['user'];
-            header("location: ..\guest\index.php");
+            #header("location: ..\guest\index.php");
             exit;
         }
     }
-    #eader("location: ..\log_in\index.php");    
+    #header("location: ..\log_in\index.php");    
 ?>
