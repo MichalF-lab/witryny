@@ -17,9 +17,7 @@
   <!-- My style -->
   <link rel="stylesheet" href="../style/radio.css">
   <link rel="stylesheet" href="../style/btn.css">
-  <style>
-      img{fill: green;}
-  </style>
+  <link rel="stylesheet" href="../style/font.css">
 </head>
 <!--
 `body` tag options:
@@ -46,11 +44,24 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      
-        <div class="info">
-          <a href="#" class="d-block">Artur stachowiak<!-- skrypt --></a>
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      <div class="info">
+          <a href="#" class="d-block">
+            <!-- skrypt -->
+            <?php
+              session_start();
+              require_once('../script/connect.php');
+              $sql =  "SELECT Imie, Nazwisko FROM uzytkownicy WHERE login = $_SESSION[user]";
+              $result = $connect->query($sql);
+              while($wiersz = $result->fetch_assoc())
+              {
+                echo $wiersz['Imie']." ".$wiersz['Nazwisko'];
+              }
+            ?>
+          </a>
         </div>
-      </div><br>
+      </div>
+      </div>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -92,6 +103,8 @@
               <p>Dokumentacja</p>
             </a>
           </li>
+          <hr>
+          
     
         </ul>
       </nav>
@@ -260,11 +273,28 @@
               <div class="card-body">
                 <div class="d-flex">
                   <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">$18,230.00</span>
                     <!-- skrypt -->
-                    <!-- spłata kredytu skrypt -->
+                  <?php
+                    require_once('../script/connect.php');
+                    $sql =  "SELECT rachunek.stan_konta as siano FROM rachunek JOIN nr_rachunku ON rachunek.nr_rachunku = nr_rachunku.nr_racunku JOIN uzytkownicy ON uzytkownicy.pesel = nr_rachunku.pesel WHERE uzytkownicy.login = $_SESSION[user]";
+                    $result = $connect->query($sql);
+                    while($wiersz = $result->fetch_assoc())
+                    {    
+                      echo <<< LABEL
+                      <span class="text-bold text-lg">
+                        $wiersz[siano] zł
+                      </span>
+                      <hr>
+                      LABEL;
+                    }
+                    ?>
                   </p>
                 </div>
+                <div class="d-flex">
+                  <p class="d-flex flex-column">
+                    <!-- spłata kredytu skrypt -->
+                  </p>
+                </div>    
                 <!-- /.d-flex -->
 
                 <div class="position-relative mb-4">
@@ -314,7 +344,7 @@
 <script src="../AdminLTE-3.1.0/dist/js/adminlte.js"></script>
 
 <!-- MY SCRIPTS -->
-<script src="../skrypty/kredyt.js"></script>
+<script src="../script/radio.js"></script>
 
 </body>
 </html>

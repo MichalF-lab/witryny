@@ -27,7 +27,7 @@
 
 
       <!-- Imie, nazwisko email (Powtorz) haslo (powtorz) data_urodzenia miato(select) plec(radio) regulamin(terms)-->
-      <form action="send-to-support.php" method="post">
+      <form action="..\script\send-to-support.php" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Podaj pesel">
           <div class="input-group-append">
@@ -95,6 +95,23 @@
           <br>wyślij zdjęcia dowodu
         </div>
 
+        <select name="pytanie">
+          <option>Imie pierwszego zwierzątka</option>
+          <option>Ulubioy kolor</option>
+          <option>Nazwisko panieńskie matki</option>
+        </select>
+
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Odpowiedz">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
+            </div>
+          </div>
+        </div>
+
+
+
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
@@ -128,3 +145,5 @@
 <script src="../AdminLTE-3.1.0/dist/js/adminlte.min.js"></script>
 </body>
 </html>
+
+

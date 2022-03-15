@@ -46,7 +46,12 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="info">
-          <a href="#" class="d-block">Artur stachowiak<!-- skrypt --></a>
+          <a href="#" class="d-block">
+            <!-- skrypt -->
+            <?php
+              require_once('../script/name.php');
+            ?>
+          </a>
         </div>
       </div>
       </div>
@@ -64,7 +69,10 @@
               <i class="nav-icon far"><img src="..\pictures\chatbubbles-outline.svg"></i>
               <p>
                 Uzyskaj pomoc
-                <span class="badge badge-info right">2<!-- skrypt --></span>
+                <!-- skrypt -->
+                <?php
+                  require_once('../script/unread.php');
+                ?>
               </p>
             </a>
           </li>
@@ -91,6 +99,8 @@
               <p>Dokumentacja</p>
             </a>
           </li>
+          <hr>
+          
     
         </ul>
       </nav>
@@ -132,23 +142,44 @@
               </div>
               <div class="card-body">
                 <!-- Skrypt -->
-                <form action="../skrypty/wezkredyt.php" method="POST">
+                <form action="../script/take_a_loan.php" method="POST">
                   <h3>Kwota kredytu</h3>
-                  <input type="range" min="100" max="10000" value="2000" step="100" class="slider" id="myRange1">
+                  <input type="range" min="100" max="10000" value="2000" step="100" class="slider" id="myRange1" name="kwota">
                   <h5><span id="demo1"></span> zł</h5>
                   <br>
                   <h3>Ilość rat</h3>
-                  <input type="range" min="1" max="30" value="15" class="slider" id="myRange2">
+                  <input type="range" min="1" max="30" value="15" class="slider" id="myRange2" name="raty">
                   <h5><span id="demo2"></span> rat</h5>
                 
                   <input type="submit" value="Weź kredyt" class="btn button">
                 </form>
-
-
-
               </div>
             </div>
             <!-- /.card -->
+
+
+            <?php
+              require_once("../script/show_pay_off.php")
+            ?>
+
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header border-100">
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">
+                    <b>Stan konta:</b> 
+                    <?php
+                      require_once('../script/cash.php');
+                    ?>
+                  </h3>
+                </div>
+              </div> 
+                <!-- /.d-flex -->
+                </div>               
+
+
 
             <div class="card">
               <div class="card-header border-0">
@@ -158,124 +189,22 @@
                 <table class="table table-striped table-valign-middle">
                   <thead>
                   <tr>
-                    <th>Odbiorca</th>
                     <th>Nadawca</th>
+                    <th>Odbiorca</th>
                     <th>Kwota</th>
                     <th>Data</th>
                   </tr>
                   </thead>
                   <tbody>
                   <!-- skrypt -->
-                  <tr>
-                    <td>
-                      
-                      Some Product
-                    </td>
-                    <td>$13 USD</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <i class="fas fa-arrow-up"></i>
-                        12%
-                      </small>
-                      12,000 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Another Product
-                    </td>
-                    <td>$29 USD</td>
-                    <td>
-                      <small class="text-warning mr-1">
-                        <i class="fas fa-arrow-down"></i>
-                        0.5%
-                      </small>
-                      123,234 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Amazing Product
-                    </td>
-                    <td>$1,230 USD</td>
-                    <td>
-                      <small class="text-danger mr-1">
-                        <i class="fas fa-arrow-down"></i>
-                        3%
-                      </small>
-                      198 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Perfect Item
-                      <span class="badge bg-danger">NEW</span>
-                    </td>
-                    <td>$199 USD</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <i class="fas fa-arrow-up"></i>
-                        63%
-                      </small>
-                      87 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  
-                  
+                  <?php
+                    require_once('../script/last_operation.php');
+                  ?>
                   </tbody>
                 </table>
               </div>
-            </div>
-            <!-- /.card -->
+            </div>   
           </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Stan konta</h3>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <span class="text-bold text-lg">$18,230.00</span>
-                    <!-- skrypt -->
-                    <!-- spłata kredytu skrypt -->
-                  </p>
-                </div>
-                <!-- /.d-flex -->
-
-                <div class="position-relative mb-4">
-                  <canvas id="sales-chart" height="200"></canvas>
-                </div>
-
-                </div>
-              </div>
-            </div>
-            <!-- /.card -->
-
-            
           <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->

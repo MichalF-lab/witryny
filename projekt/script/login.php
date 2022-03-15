@@ -7,16 +7,15 @@
         $klient = $wiersz['pas'];
         echo "<br>";
         $server = sha1($_POST['pass']);
-        $a = 80;
-        echo strlen ($klient)." ";
-        echo strlen ($server);
-        #echo [$a];
-        if($klient == $server)
+        $y = (trim($klient));
+        $x = (trim($server));
+        if($y == $x)
         {
-            $_SESSION['user'] = $_POST['user'];
+            session_start();
+            $_SESSION["user"] = $_POST['user'];
             header("location: ..\guest\index.php");
             exit;
         }
     }
-    #eader("location: ..\log_in\index.php");    
+    header("location: ..\log_in\index.php");    
 ?>
