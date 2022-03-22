@@ -1,0 +1,24 @@
+klient
+    123456 - 123
+    - stan konta
+    - kredyty
+    - przelewy
+    - historia operacji
+support
+    123455 - qwerty
+    - korespondencja z klientami
+    - podgląd histori przelewów klienta
+    - podgląd stanu konta klienta
+
+moderator
+    857043 - qwerty
+    - zatwierdzanie odzyskiwania hasła
+    - dodawanie supportów
+    - podgląd wszystkich operacji banku
+
+admin
+    111111 - admin
+    - dodawanie moderatorów
+    - usuwanie kont
+    - podgląd wszystkich operacji banku
+    - zmiana środków na koncie

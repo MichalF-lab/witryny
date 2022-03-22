@@ -13,12 +13,33 @@
         {
             session_start();
             $_SESSION["user"] = $_POST['user'];
-            if(true)
+            if($_POST['remember_me'] == true)
             {
                 setcookie('nbanklogin', $_POST['user'], time() + (86400 * 14), "/");
             }
-            header("location: ..\guest\index.php");
-            exit;
+            $sql = "SELECT uzytkownicy.rodzaj_konta as upr FROM uzytkownicy WHERE uzytkownicy.login = $_SESSION[user]";
+            $result3 = $connect->query($sql);
+            $wiersz3 = $result3->fetch_assoc();
+            if($wiersz3['upr'] == "client")
+            {
+                header("location: ..\guest\index.php");
+                exit;
+            }
+            if($wiersz3['upr'] == "support")
+            {
+                header("location: ..\support\index.php");
+                exit;
+            }
+            if($wiersz3['upr'] == "moderator")
+            {
+                header("location: ..\moderator\index.php");
+                exit;
+            }
+            if($wiersz3['upr'] == "admin")
+            {
+                header("location: ..\admin\index.php");
+                exit;
+            }
         }
     }
     header("location: ..\log_in\index.php?error=5");    
