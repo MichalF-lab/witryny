@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Logowanie</title>
 
+  <?php  require_once('..\script\remember_me.php'); ?>
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -27,7 +29,7 @@
 
       <form action="../script/login.php" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="login" name="user">
+          <input type="text" class="form-control" placeholder="login" name="user" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -35,7 +37,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Haslo" name="pass">
+          <input type="password" class="form-control" placeholder="Haslo" name="pass" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -62,12 +64,10 @@
       <p class="mb-1">
         <a href="forgot-password.php">Odzyskaj hasło</a>
       </p>
-      <p class="mb-0">
+      <!--<p class="mb-0">
         <a href="register.php" class="text-center">Założ konto</a>
-      </p>
-      <?php
-      if(isset($_GET['error'])) echo 'błedny login lub hasło';
-      ?>
+      </p>-->
+
     </div>
     <!-- /.login-card-body -->
   </div>
@@ -80,5 +80,7 @@
 <script src="../AdminLTE-3.1.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../AdminLTE-3.1.0/dist/js/adminlte.min.js"></script>
+
+<?php require_once("..\script\warning.php"); ?>
 </body>
 </html>

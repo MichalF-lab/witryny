@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../AdminLTE-3.1.0/dist/css/adminlte.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="../../plugins/toastr/toastr.min.css">
+
+  <!-- Errors -->
+
 
   <!-- My style -->
   <link rel="stylesheet" href="../style/radio.css">
@@ -36,7 +41,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="..\glowna\index.php" class="brand-link">
+    <a class="brand-link">
       <img src="..\logo\Przechwytywanie.png" class="brand-image elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">NBank</span>
     </a>
@@ -49,7 +54,7 @@
           <a href="#" class="d-block">
             <!-- skrypt -->
             <?php
-              require_once('../script/name.php');
+              require_once('../script/show_name.php');
             ?>
           </a>
         </div>
@@ -81,6 +86,14 @@
               <i class="nav-icon far"><img src="..\pictures\heart-outline.svg"></i>
               <p>
                 WOŚP
+              </p>
+            </a>
+          </li>          
+          <li class="nav-item">
+            <a href="..\script\show_transfers.php" class="nav-link">
+              <i class="nav-icon far"><img src="..\pictures\reader-outline.svg"></i>
+              <p>
+                Wszystkie operacje
               </p>
             </a>
           </li>
@@ -122,6 +135,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="..\guest\index.php">Strona głowna</a></li>
               <li class="breadcrumb-item active">NBank</li>
+              <li class="breadcrumb-item"><a href="..\script\log_out.php">Wyloguj</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -152,6 +166,7 @@
                   <h5><span id="demo2"></span> rat</h5>
                 
                   <input type="submit" value="Weź kredyt" class="btn button">
+                  <div id="demo2 float-left d-none d-sm-inline-block">Oprocentowanie 110%</div>
                 </form>
               </div>
             </div>
@@ -171,15 +186,13 @@
                   <h3 class="card-title">
                     <b>Stan konta:</b> 
                     <?php
-                      require_once('../script/cash.php');
+                      require_once('../script/show_cash.php');
                     ?>
                   </h3>
                 </div>
               </div> 
                 <!-- /.d-flex -->
-                </div>               
-
-
+            </div>               
 
             <div class="card">
               <div class="card-header border-0">
@@ -198,7 +211,7 @@
                   <tbody>
                   <!-- skrypt -->
                   <?php
-                    require_once('../script/last_operation.php');
+                    require_once('../script/show_last_operation.php');
                   ?>
                   </tbody>
                 </table>
@@ -241,8 +254,19 @@
 <!-- AdminLTE -->
 <script src="../AdminLTE-3.1.0/dist/js/adminlte.js"></script>
 
+<!-- Toastr -->
+<script src="../../plugins/toastr/toastr.min.js"></script>
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+
 <!-- MY SCRIPTS -->
 <script src="../script/radio.js"></script>
+
+<script>
+
+</script>
+
+<?php require_once("..\script\warning.php"); ?>
 
 </body>
 </html>

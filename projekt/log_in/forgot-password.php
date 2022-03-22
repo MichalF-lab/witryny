@@ -24,7 +24,8 @@
   <div class="card" >
     <div class="card-body login-card-body">
       <p class="login-box-msg" >Odzyskaj hasło</p>
-
+      <p class="login-box-msg" >Aby odzyskać hasło prosimy połączyć się z infolinią pod numerem <b>509 311 312</b></p>
+      <!--
       <form action="../script/fpass.php" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="login" name="user">
@@ -41,13 +42,13 @@
         </div>
 
         <div class="row">
-          <!-- /.col --> 
+          
         <button type="submit" class="btn-primary btn-block">Odzyskaj hasło</button>
-          <!-- /.col -->
+        
         </div>
       </form>
-
-      
+         -->
+      </div>
     <!-- /.login-card-body -->
   </div>
 </div>

@@ -21,7 +21,7 @@
         $connect->query($sql);
         $sql = "INSERT INTO `tranzakcje` (`id_tranzakcji`, `nadawca`, `odbiorca`, `ile`, `data`) VALUES (NULL, 'NBank', '$imie',  $wiersz[rata], current_timestamp())";
         $connect->query($sql);
-        $sql = "INSERT INTO `nr_tranzakcji` (`pesel`, `id_trazakcji`) VALUES ($pesel, NULL)";
+        $sql = "INSERT INTO `nr_tranzakcji` (`pesel`, `id_trazakcji`, `pesel_nadawcy`) VALUES (0, NULL, $pesel)";
         $connect->query($sql);
         $sql = "UPDATE `kredyt` SET `pozostalo_rat` = `pozostalo_rat`- 1, `pozostalo_do_spalacenia` = `pozostalo_do_spalacenia` - $wiersz[rata] WHERE `kredyt`.`Id_kredytu` = $wiersz[Id_kredytu]";
         $connect->query($sql);

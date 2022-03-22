@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../style/radio.css">
   <link rel="stylesheet" href="../style/btn.css">
   <link rel="stylesheet" href="../style/font.css">
+
 </head>
 <!--
 `body` tag options:
@@ -36,7 +37,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="..\glowna\index.php" class="brand-link">
+    <a class="brand-link">
       <img src="..\logo\Przechwytywanie.png" class="brand-image elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">NBank</span>
     </a>
@@ -48,14 +49,19 @@
       <div class="info">
           <a href="#" class="d-block">
             <!-- skrypt -->
+            <!-- sesion_start() -->
             <?php
-              require_once('../script/name.php');
+              require_once('../script/show_name.php');
             ?>
           </a>
         </div>
       </div>
       </div>
 
+      <!-- skrypt -->
+      <?php
+        require_once('../script/readed.php');
+      ?> 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -81,6 +87,14 @@
               <i class="nav-icon far"><img src="..\pictures\heart-outline.svg"></i>
               <p>
                 WOŚP
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="..\script\show_transfers.php" class="nav-link">
+              <i class="nav-icon far"><img src="..\pictures\reader-outline.svg"></i>
+              <p>
+                Wszystkie operacje
               </p>
             </a>
           </li>
@@ -122,6 +136,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="..\guest\index.php">Strona głowna</a></li>
               <li class="breadcrumb-item active">NBank</li>
+              <li class="breadcrumb-item"><a href="..\script\log_out.php">Wyloguj</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -143,18 +158,18 @@
                 <div class="direct-chat-messages">
                   <!-- Message. Default to the left -->
                   <?php
-                    require_once('../script/chat.php');
+                    require_once('../script/show_chat.php');
                   ?>                  
                   <!-- /.direct-chat-msg -->
                 </div>
               
               <!-- /.card-body -->
               <div class="card-footer">
-                <form action="#" method="post">
+                <form action="..\script\send_mes_guest.php" method="post">
                   <div class="input-group">
-                    <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                    <input type="text" name="message" placeholder="Napisz wiadomość ..." class="form-control">
                     <span class="input-group-append">
-                      <button type="submit" class="btn btn-warning">Send</button>
+                      <button type="submit" class="btn button">Wyślij</button>
                     </span>
                   </div>
                 </form>
@@ -200,6 +215,8 @@
 
 <!-- MY SCRIPTS -->
 <script src="../script/radio.js"></script>
+
+<?php require_once("..\script\warning.php"); ?>
 
 </body>
 </html>

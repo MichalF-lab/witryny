@@ -25,11 +25,11 @@
     <div class="card-body register-card-body">
       <p class="login-box-msg">Zarejestruj użytkownika</p>
 
-
-      <!-- Imie, nazwisko email (Powtorz) haslo (powtorz) data_urodzenia miato(select) plec(radio) regulamin(terms)-->
+      <!--
+      Imie, nazwisko email (Powtorz) haslo (powtorz) data_urodzenia miato(select) plec(radio) regulamin(terms)
       <form action="..\script\send-to-support.php" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Podaj pesel">
+          <input type="text" class="form-control" placeholder="Podaj pesel" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Podaj imie">
+          <input type="text" class="form-control" placeholder="Podaj imie" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -47,7 +47,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Podaj nazwisko">
+          <input type="text" class="form-control" placeholder="Podaj nazwisko" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -56,7 +56,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Podaj hasło">
+          <input type="password" class="form-control" placeholder="Podaj hasło" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -65,7 +65,7 @@
         </div>
 
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Powtórz hasło">
+          <input type="password" class="form-control" placeholder="Powtórz hasło" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -74,25 +74,20 @@
         </div>
         
         <div class="input-group mb-3">
-          <input type="radio" class="form-control" name="plec"> Mężczyzna<br>
-          <input type="radio" class="form-control" name="plec"> Kobieta
+          <input type="radio" class="form-control" name="plec" required> Mężczyzna<br>
+          <input type="radio" class="form-control" name="plec" required> Kobieta
           <div class="input-group-append">
           </div>
         </div>
 
 
         <div class="input-group mb-3">
-          <input type="date" class="form-control" placeholder="Podaj date urodzenie">
+          <input type="date" class="form-control" placeholder="Podaj date urodzenie" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
-        </div>
-
-        <div class="input-group mb-3">
-          <input type="file" require accept="image/png, image/jpeg" multiple>
-          <br>wyślij zdjęcia dowodu
         </div>
 
         <select name="pytanie">
@@ -102,7 +97,7 @@
         </select>
 
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Odpowiedz">
+          <input type="text" class="form-control" placeholder="Odpowiedz" required>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -121,15 +116,14 @@
               </label>
             </div>
           </div>
-          <!-- /.col -->
+
           <div class="col-4">
             <button type="submit" class="btn btn-primary btn-block">Rejestracja</button>
           </div>
-          <!-- /.col -->
         </div>
         
       </form>
-
+      -->
       <a href="index.php" class="text-center">Mam już konto</a>
     </div>
     <!-- /.form-box -->

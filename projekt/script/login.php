@@ -13,9 +13,13 @@
         {
             session_start();
             $_SESSION["user"] = $_POST['user'];
+            if(true)
+            {
+                setcookie('nbanklogin', $_POST['user'], time() + (86400 * 14), "/");
+            }
             header("location: ..\guest\index.php");
             exit;
         }
     }
-    header("location: ..\log_in\index.php");    
+    header("location: ..\log_in\index.php?error=5");    
 ?>

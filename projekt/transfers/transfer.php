@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="../style/radio.css">
   <link rel="stylesheet" href="../style/btn.css">
   <link rel="stylesheet" href="../style/font.css">
+
 </head>
 <!--
 `body` tag options:
@@ -36,7 +37,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="..\glowna\index.php" class="brand-link">
+    <a class="brand-link">
       <img src="..\logo\Przechwytywanie.png" class="brand-image elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">NBank</span>
     </a>
@@ -48,15 +49,9 @@
       <div class="info">
           <a href="#" class="d-block">
             <!-- skrypt -->
+            <!-- sesion_start() -->
             <?php
-              session_start();
-              require_once('../script/connect.php');
-              $sql =  "SELECT Imie, Nazwisko FROM uzytkownicy WHERE login = $_SESSION[user]";
-              $result = $connect->query($sql);
-              while($wiersz = $result->fetch_assoc())
-              {
-                echo $wiersz['Imie']." ".$wiersz['Nazwisko'];
-              }
+              require_once('../script/show_name.php');
             ?>
           </a>
         </div>
@@ -76,7 +71,10 @@
               <i class="nav-icon far"><img src="..\pictures\chatbubbles-outline.svg"></i>
               <p>
                 Uzyskaj pomoc
-                <span class="badge badge-info right">2<!-- skrypt --></span>
+                <!-- skrypt -->
+                <?php
+                  require_once('../script/unread.php');
+                ?>
               </p>
             </a>
           </li>
@@ -85,6 +83,14 @@
               <i class="nav-icon far"><img src="..\pictures\heart-outline.svg"></i>
               <p>
                 WOŚP
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="..\script\show_transfers.php" class="nav-link">
+              <i class="nav-icon far"><img src="..\pictures\reader-outline.svg"></i>
+              <p>
+                Wszystkie operacje
               </p>
             </a>
           </li>
@@ -126,6 +132,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="..\guest\index.php">Strona głowna</a></li>
               <li class="breadcrumb-item active">NBank</li>
+              <li class="breadcrumb-item"><a href="..\script\log_out.php">Wyloguj</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -134,179 +141,52 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <div class="content">
+    <div class="content card-outline">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header border-0">
+          <div class="col-lg-8">
+
+          <div class="card">
+              <div class="card-header border-100">
                 <div class="d-flex justify-content-between">
-                  <h1 class="card-title">Weź kredyt</h1>
-                </div>
-              </div>
-              <div class="card-body">
-                <!-- Skrypt -->
-                <form action="../skrypty/wezkredyt.php" method="POST">
-                  <h3>Kwota kredytu</h3>
-                  <input type="range" min="100" max="10000" value="2000" step="100" class="slider" id="myRange1">
-                  <h5><span id="demo1"></span> zł</h5>
-                  <br>
-                  <h3>Ilość rat</h3>
-                  <input type="range" min="1" max="30" value="15" class="slider" id="myRange2">
-                  <h5><span id="demo2"></span> rat</h5>
-                
-                  <input type="submit" value="Weź kredyt" class="btn button">
-                </form>
-
-
-
-              </div>
-            </div>
-            <!-- /.card -->
-
-            <div class="card">
-              <div class="card-header border-0">
-                <h3 class="card-title">Ostatnie operacje</h3>
-              </div>
-              <div class="card-body table-responsive p-0">
-                <table class="table table-striped table-valign-middle">
-                  <thead>
-                  <tr>
-                    <th>Odbiorca</th>
-                    <th>Nadawca</th>
-                    <th>Kwota</th>
-                    <th>Data</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <!-- skrypt -->
-                  <tr>
-                    <td>
-                      
-                      Some Product
-                    </td>
-                    <td>$13 USD</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <i class="fas fa-arrow-up"></i>
-                        12%
-                      </small>
-                      12,000 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Another Product
-                    </td>
-                    <td>$29 USD</td>
-                    <td>
-                      <small class="text-warning mr-1">
-                        <i class="fas fa-arrow-down"></i>
-                        0.5%
-                      </small>
-                      123,234 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Amazing Product
-                    </td>
-                    <td>$1,230 USD</td>
-                    <td>
-                      <small class="text-danger mr-1">
-                        <i class="fas fa-arrow-down"></i>
-                        3%
-                      </small>
-                      198 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Perfect Item
-                      <span class="badge bg-danger">NEW</span>
-                    </td>
-                    <td>$199 USD</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        <i class="fas fa-arrow-up"></i>
-                        63%
-                      </small>
-                      87 Sold
-                    </td>
-                    <td>
-                      <a href="#" class="text-muted">
-                        <i class="fas fa-search"></i>
-                      </a>
-                    </td>
-                  </tr>
-                  
-                  
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                  <h3 class="card-title">Stan konta</h3>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <!-- skrypt -->
-                  <?php
-                    require_once('../script/connect.php');
-                    $sql =  "SELECT rachunek.stan_konta as siano FROM rachunek JOIN nr_rachunku ON rachunek.nr_rachunku = nr_rachunku.nr_racunku JOIN uzytkownicy ON uzytkownicy.pesel = nr_rachunku.pesel WHERE uzytkownicy.login = $_SESSION[user]";
-                    $result = $connect->query($sql);
-                    while($wiersz = $result->fetch_assoc())
-                    {    
-                      echo <<< LABEL
-                      <span class="text-bold text-lg">
-                        $wiersz[siano] zł
-                      </span>
-                      <hr>
-                      LABEL;
-                    }
+                  <h3 class="card-title">
+                    <b>Stan konta:</b> 
+                    <?php
+                      require_once('../script/show_cash.php');
                     ?>
-                  </p>
+                  </h3>
                 </div>
-                <div class="d-flex">
-                  <p class="d-flex flex-column">
-                    <!-- spłata kredytu skrypt -->
-                  </p>
-                </div>    
+              </div> 
                 <!-- /.d-flex -->
+            </div>  
 
-                <div class="position-relative mb-4">
-                  <canvas id="sales-chart" height="200"></canvas>
-                </div>
 
-                </div>
+            <div class="card">           
+              <div class="card-header border-10">
+                <h3 class="card-title">Nowy Przelew</h3>
               </div>
-            </div>
-            <!-- /.card -->
-
-            
+                <!-- skrypt -->
+              <!-- /.card-body -->
+              <form action="..\script\transfer.php" method="post">
+                <div class="card-footer">
+                    <div class="input-group">
+                      <input type="text" name="adresat" placeholder="Podaj login użytkownika" class="form-control">
+                      <span class="input-group-append">
+                      </span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                  <div class="input-group">
+                    <input type="number" name="kwota" placeholder="Wpisz kwote przelewu" step="0.01" class="form-control">
+                    <span class="input-group-append">
+                      <button type="submit" class="btn button">Zrób przelew</button>
+                    </span>
+                  </div>
+                </div>
+              </form>
+              <!-- /.card-footer-->
+            </div>   
+          </div>
           <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
