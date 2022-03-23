@@ -6,6 +6,8 @@
     $wiersz = $result->fetch_assoc();
     $sql =  "INSERT INTO `czat` (`pesel_klienta`, `autor`, `tresc`, `id`) VALUES ('$_POST[pes]', $wiersz[pesel], '$_POST[message]', NULL); ";
     $result = $connect->query($sql);
+    $sql =  "UPDATE uzytkownicy SET uzytkownicy.ile_nieprzeczytanych = uzytkownicy.ile_nieprzeczytanych + 1 WHERE uzytkownicy.pesel = '$_POST[pes]'";
+    $result = $connect->query($sql);
     header("location: ../support/index.php?error=14");
     exit;
     

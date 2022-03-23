@@ -120,7 +120,7 @@
                 $(document).Toasts('create', {
                     class: 'bg-success',
                     title: 'Sukces',
-                    body: 'Pomyślnie wysłano reść wiadomości.'
+                    body: 'Pomyślnie wysłano treść wiadomości.'
                 })
             </script>
         <?php

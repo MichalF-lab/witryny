@@ -12,7 +12,7 @@ support
 
 moderator
     857043 - qwerty
-    - zatwierdzanie odzyskiwania hasła
+    - @zatwierdzanie odzyskiwania hasła
     - dodawanie supportów
     - podgląd wszystkich operacji banku
 

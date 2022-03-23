@@ -7,6 +7,7 @@
         $klient = $wiersz['pas'];
         echo "<br>";
         $server = sha1($_POST['pass']);
+        #$server = password_hash($_POST['pass'], PASSWORD_ARGON2ID);
         $y = (trim($klient));
         $x = (trim($server));
         if($y == $x)
