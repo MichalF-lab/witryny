@@ -47,9 +47,24 @@ let animation = anime({
   anime({
       targets: '.delivery',
       translateX: [
-        {value: -1000, duration: 10, delay: 1000},
         {value: 1000, duration: 5000, delay: 500},
-        {value: 1500, duration: 5000, delay: 500},
+        {value: 3000, duration: 5000, delay: 500},
       ],
       loop: true
   })
+
+  // Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -25.344, lng: 131.036 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}

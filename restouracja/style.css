@@ -4,9 +4,20 @@ html, body {
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
+    overflow: hidden;
   }
+header{
+    position:fixed;
+    width: 95%;
+}
+img{
+    float: left;
+}
+.flex{
+    float: right;
+}
   
-  #root {
+  #btn {
     overflow: hidden;
     height: 70%;
     display: flex;
@@ -21,19 +32,20 @@ html, body {
     width: 320px;
   }
   
-  #text {
+  .text {
     padding: 0.5em 1em;
     border: 1px solid white;
     border-radius: 2px;
   }
   
-  #button {
+  #button, a {
     padding: 0.3em 0.6em;
     border: 1px solid white;
     margin-top: 1em;
     border-radius: 2px;
     color: white;
     cursor: pointer;
+    text-decoration: none;
   }
 
   .letter {
@@ -48,3 +60,9 @@ html, body {
   .delivery{
       height: 50px;
   }
+
+  #map {
+    height: 90px;
+    width: 10%;
+  }
+  
