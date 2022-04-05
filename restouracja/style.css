@@ -66,3 +66,37 @@ img{
     width: 10%;
   }
   
+  #maingalery{
+    float: left;
+    width: 95%;
+    position: relative;
+  }
+
+#topgalery, #bottomgalery{
+  height: 28%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img{
+  width: 28%;
+  height: 250px;
+  cursor: pointer;
+}
+
+.pic{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+  height: 80%;
+  width: 80%;
+}
+
+.opa{
+  opacity: 1;
+}

@@ -68,3 +68,32 @@ function initMap() {
     map: map,
   });
 }
+/*
+const zdjecia = document.querySelectorAll('.img');
+for (const zdjecie of zdjecia) {
+  zdjecie.addEventListener('click', () => {
+    if(zdjecie.style.height=="80%")
+    {
+      zdjecie.style.height="";
+      zdjecie.style.width="";
+    }
+    else
+    {
+      zdjecie.style.height="80%";
+      zdjecie.style.width="80%";
+    }
+  });
+}
+*/
+
+const zdjecia = document.querySelectorAll('.img');
+for (const zdjecie of zdjecia) {
+  zdjecie.addEventListener('click', () => {
+    if(zdjecie.style.height=="90%"){
+      zdjecie.style.opacity = "1";
+    }
+    else{
+      zdjecie.style.opacity = "1";
+    }
+  });
+}
