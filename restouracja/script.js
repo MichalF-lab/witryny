@@ -90,10 +90,10 @@ const zdjecia = document.querySelectorAll('.img');
 for (const zdjecie of zdjecia) {
   zdjecie.addEventListener('click', () => {
     if(zdjecie.style.height=="90%"){
-      zdjecie.style.opacity = "1";
+      zdjecie.style.opacity = "0";
     }
     else{
-      zdjecie.style.opacity = "1";
+      zdjecie.style.opacity = "0";
     }
   });
 }

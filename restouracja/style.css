@@ -92,7 +92,7 @@ img{
   left: 0;
   right: 0;
   margin: auto;
-  opacity: 0;
+  opacity: 1;
   height: 80%;
   width: 80%;
 }
